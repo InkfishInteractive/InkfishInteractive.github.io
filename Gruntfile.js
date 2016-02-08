@@ -10,13 +10,13 @@ module.exports = function(grunt)
 			{
 				base: './src',
 				styles: '<%= meta.src.base %>/sass',
-				scripts: '<%= meta.src.base %>/js',
+				scripts: '<%= meta.src.base %>/app',
 			},
 			dist:
 			{
 				base: './dist',
 				styles: '<%= meta.dist.base %>/css',
-				scripts: '<%= meta.dist.base %>/js',
+				scripts: '<%= meta.dist.base %>/app',
 			},
 			bower: './bower_components/',
 			env:
@@ -48,7 +48,11 @@ module.exports = function(grunt)
 			},
 			dist:
 			{
-				src: ['<%= meta.src.scripts %>/app/**/*'],
+				src: [
+					'<%= meta.src.scripts %>/**/*.js',
+					'!<%= meta.src.scripts %>/**/*_test.js',
+					'!<%= meta.src.scripts %>/bower_components/**/*',
+				],
 				dest: '<%= meta.dist.scripts %>/main.js',
 			},
 		},
@@ -59,7 +63,8 @@ module.exports = function(grunt)
 			{
 				files:
 				{
-					'<%= meta.dist.styles %>/styles.css': '<%= meta.src.styles %>/main.scss'
+					'<%= meta.dist.styles %>/styles.css':
+					'<%= meta.src.styles %>/main.scss'
 				}
 			}
 		},

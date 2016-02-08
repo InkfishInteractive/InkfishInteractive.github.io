@@ -1,8 +1,8 @@
 'use strict';
 
-describe('myApp.view2 module', function() {
+describe('inkfish.view2 module', function() {
 
-  beforeEach(module('myApp.view2'));
+  beforeEach(module('inkfish.view2'));
 
   describe('view2 controller', function(){
 
