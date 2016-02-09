@@ -1,0 +1,108 @@
+/**
+ * Flexbox mixin
+ */
+@mixin soFlexyBox($direction: row, $justification: center, $alignment: center, $wrap: nowrap, $spacing: stretch, $display: flex) {
+	@include flexed(display, $display);
+	@include flexed(flex-direction, $direction);
+	@include flexed(flex-wrap, $wrap);
+	@include flexed(flex-flow, $direction $wrap);
+	@include flexed(justify-content, $justification);
+	@include flexed(align-items, $alignment);
+	@include flexed(align-content, $spacing);
+}
+@mixin soFlexyItem($alignSelf: auto, $flex: 0 1 auto, $order: 0) {
+	@include flexed(flex, $flex);
+	@include flexed(order, $order);
+	@include flexed(align-self, $alignSelf);
+}
+@mixin flexed($param, $value) {
+	@if $param == display {
+		@if $value == flex {
+			display: -webkit-box;
+			/* early support ios 6 and safari */
+			display: -moz-box;
+			/* early support firefox */
+			display: -ms-flexbox;
+			/* ie 10 */
+			display: -webkit-flex;
+			/* new chrome, safari */
+			display: $value;
+			/* w3 standard */
+		}
+		@else if $value == inline-flex {
+			display: -ms-inline-flexbox;
+			display: -webkit-inline-flex;
+			display: $value;
+		}
+		@else {
+			display: $value;
+		}
+	}
+	@else if $param == align-items {
+		@if $param == flex-start {
+			-ms-flex-align: start;
+			-webkit-align-items: $value;
+			align-items: $value;
+		}
+		@else if $value == flex-end {
+			-ms-flex-align: end;
+			-webkit-align-items: $value;
+			align-items: $value;
+		}
+		@else {
+			-ms-flex-align: $value;
+			-webkit-align-items: $value;
+			align-items: $value;
+		}
+	}
+	@else if $param == flex-wrap {
+		-webkit-flex-wrap: $value;
+		-ms-flex-wrap: $value;
+		flex-wrap: $value;
+	}
+	@else if $param == flex-direction {
+		-webkit-flex-direction: $value;
+		-ms-flex-direction: $value;
+		flex-direction: $value;
+	}
+	@else if $param == justify-content {
+		@if $value == flex-start {
+			-ms-flex-pack: start;
+			-webkit-justify-content: $value;
+			justify-content: $value;
+		}
+		@else if $value == flex-end {
+			-ms-flex-pack: end;
+			-webkit-justify-content: $value;
+			justify-content: $value;
+		}
+		@else {
+			-ms-flex-pack: $value;
+			-webkit-justify-content: $value;
+			justify-content: $value;
+		}
+	}
+	@else if $param == align-content {
+		-webkit-align-content: $value;
+		-ms-flex-line-pack: $value;
+		align-content: $value;
+	}
+	@else if $param == order {
+		-webkit-order: $value;
+		-ms-flex-order: $value;
+		order: $value;
+	}
+	@else if $param == flex {
+		-webkit-flex: $value;
+		-ms-flex: $value;
+		flex: $value;
+	}
+	@else if $param == align-self {
+		-webkit-align-self: $value;
+		-ms-flex-item-align: $value;
+		align-self: $value;
+	}
+	@else {
+		@include prefixed($param, $value);
+	}
+}

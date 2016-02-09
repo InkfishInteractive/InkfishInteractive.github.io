@@ -1,0 +1,28 @@
+/**
+ * Media Query mixin
+ * Source: http://www.sitepoint.com/introduction-mobile-first-media-queries/
+ * Usage: 
+ * @include mquery(medium) {
+ *   float: left;
+ *  }
+ */
+@mixin mQuery($size) {
+    
+    @if $size == "small" {
+        @media (min-width: $viewport-small-width) {
+            @content;
+        }
+    }
+
+    @else if $size == "medium" {
+        @media (min-width: $viewport-medium-width) {
+            @content;
+        }
+    }
+
+    @else if $size == "large" {
+        @media (min-width: $viewport-large-width) {
+            @content;
+        }
+    }
+}

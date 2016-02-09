@@ -1,0 +1,59 @@
+html,
+body {
+	@include theme-light;
+	font-family: "freight-big-pro", serif;
+	font-size: 18px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+main > *,
+footer > * {
+	padding: $space-xxlg 0;
+	margin: 0;
+	width: 100%;
+    min-height: 300px;
+}
+.nk-brand {
+	color: $color-ruby-red;
+	svg {
+		fill: currentColor;
+	}
+}
+footer {
+    // @include soFlexyBox();
+	padding-top: $space-xxlg;
+	& > * {
+		width: 100%;
+	}
+	.nk-brand {
+        @include soFlexyBox('row');
+		@include theme-midnight;
+		svg {
+			width: 100px;
+		}
+	}
+    .nk-imprint {
+        @include soFlexyBox('row');
+        @include theme-blueberry;
+    }
+    .nk-social {
+        @include theme-periwinkle;
+    }
+    .nk-contact {
+        @include theme-blueberry;
+    }
+    .nk-description {
+        @include theme-blueberry;
+    }
+	.nk-legal {
+		@include theme-midnight;
+	}
+}
+
+.icon-button {
+    @include theme-light-gray;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

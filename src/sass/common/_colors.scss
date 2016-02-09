@@ -1,0 +1,56 @@
+$color-midnight-blue: #1e1f26;
+$color-periwinkle: #d0e1f9;
+$color-blueberry: #4d648d;
+$color-indigo-ink: #283655;
+$color-ink: #20232a;
+$color-ruby-red: #a01d26;
+$color-paper: #f4f4ef;
+$color-mist: #90afc5;
+$color-stone: #336b87;
+$color-shadow: #2a3132;
+// inherited
+$color-black: $color-ink;
+$color-light-gray: rgba($color-ink,.185);
+$color-dark-gray: rgba($color-ink,0.64);
+$color-white: rgba($color-paper, 1);
+// standards
+$color-ink-dark: rgba($color-black, 0.9);
+$color-ink-light: rgba($color-white, 0.9);
+
+//themes
+@mixin theme-light {
+	color: $color-ink-dark;
+	background-color: $color-white;
+}
+@mixin theme-dark {
+	color: $color-ink-light;
+	background-color: $color-black;
+}
+@mixin theme-dark-gray {
+	color: $color-ink-light;
+	background-color: lighten($color-black, 10%);
+}
+@mixin theme-light-gray {
+	color: $color-ink-light;
+	background-color: lighten($color-black, 80%);
+}
+@mixin theme-stone {
+	color: $color-ink-light;
+	background-color: $color-stone;
+}
+@mixin theme-midnight {
+	color: $color-ink-light;
+	background-color: $color-midnight-blue;
+}
+@mixin theme-blueberry {
+	color: $color-ink-light;
+	background-color: $color-blueberry;
+}
+@mixin theme-periwinkle {
+	color: $color-ink-dark;
+	background-color: $color-periwinkle;
+}
+@mixin theme-indigo-ink {
+	color: $color-ink-light;
+	background-color: $color-indigo-ink;
+}

@@ -1,0 +1,14 @@
+@mixin group {
+    padding: $group-padding-small;
+    margin: $group-margin-small;
+    width: $group-width-small;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mQuery(medium) {
+        padding: $group-padding;
+        margin: $group-margin;
+        width: $group-width;
+    }
+}

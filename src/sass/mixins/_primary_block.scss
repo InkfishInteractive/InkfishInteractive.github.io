@@ -1,0 +1,28 @@
+/**
+ Delineates styles for a primary block
+ */
+@mixin primaryBlock {
+    .content {
+        width: $section-width-small;
+        margin: auto;
+
+        .section, .group {
+            width: auto;
+            margin: $base-margin;
+        }
+
+        @include mQuery(medium) {
+            padding: $section-padding;
+        }
+
+
+        .inset {
+            & > h2 {
+                font-size: emToPx(2);
+                margin-top: emToPx(1.2);
+            }
+
+            margin-left: 7%;
+        }
+    }
+}

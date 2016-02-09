@@ -1,0 +1,11 @@
+.search {
+  padding-left: 8px;
+  padding-right: 8px;
+
+  md-autocomplete {
+    .md-whiteframe-z1 {
+      box-shadow: none;
+      border: none;
+    }
+  }
+}
