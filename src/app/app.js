@@ -13,6 +13,8 @@ provider('copy', CopyProvider);
 function NkMarketController($scope, copy, $sce)
 {
 	$scope.brand = copy.brand;
+    $scope.seal = $sce.trustAsHtml(copy.seal);
+    $scope.logo = $sce.trustAsHtml(copy.logo);
 	$scope.tagline = copy.tagline;
 	$scope.contact = copy.contact;
 	$scope.address = copy.address;

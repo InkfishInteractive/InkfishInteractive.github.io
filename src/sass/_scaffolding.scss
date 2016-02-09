@@ -1,59 +1,66 @@
 html,
 body {
-	@include theme-light;
+	@include theme-basic-light;
 	font-family: "freight-big-pro", serif;
 	font-size: 18px;
 	height: 100%;
 	margin: 0;
 	padding: 0;
 }
+header {
+    @include soFlexyBox(column);
+    @include theme-mid-dark;
+    height: 100vh;
+    .logo {
+        color: $color-accent-light;
+    }
+}
+a:link {
+    color: $color-accent-dark;
+}
 main > *,
 footer > * {
 	padding: $space-xxlg 0;
 	margin: 0;
-	width: 100%;
-    min-height: 300px;
+	min-height: 150px;
+}
+footer {
+	@include soFlexyBox(column);
+	@include theme-dark;
+	padding-top: $space-xxlg;
+
+    & > * {
+        @include soFlexyItem();
+    }
+    .nk-brand{
+        align-self: flex-start;
+        padding-left: $space-xxxlg;
+        padding-right: $space-xxxlg;
+    }
 }
 .nk-brand {
-	color: $color-ruby-red;
 	svg {
 		fill: currentColor;
 	}
 }
-footer {
-    // @include soFlexyBox();
-	padding-top: $space-xxlg;
-	& > * {
-		width: 100%;
-	}
-	.nk-brand {
-        @include soFlexyBox('row');
-		@include theme-midnight;
-		svg {
-			width: 100px;
-		}
-	}
-    .nk-imprint {
-        @include soFlexyBox('row');
-        @include theme-blueberry;
-    }
-    .nk-social {
-        @include theme-periwinkle;
-    }
-    .nk-contact {
-        @include theme-blueberry;
-    }
-    .nk-description {
-        @include theme-blueberry;
-    }
-	.nk-legal {
-		@include theme-midnight;
+.seal {
+	svg {
+		width: 100px;
 	}
 }
-
+.logo {
+    svg {
+		width: 180px;
+	}
+}
+.nk-social {}
+.nk-imprint {}
+.nk-contact {}
+.nk-description {}
+.nk-legal {}
 .icon-button {
-    @include theme-light-gray;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+	@include theme-basic-mid-light;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
 }
