@@ -5,4 +5,4 @@ angular.module('inkfish.version', [
   'inkfish.version.version-directive'
 ])
 
-.value('version', '0.1');
+.value('version', '0.0.1');
