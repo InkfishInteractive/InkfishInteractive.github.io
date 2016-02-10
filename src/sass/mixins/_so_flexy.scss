@@ -1,7 +1,7 @@
 /**
  * Flexbox mixin
  */
-@mixin soFlexyBox($direction: row, $justification: center, $alignment: center, $wrap: nowrap, $spacing: stretch, $display: flex) {
+@mixin soFlexyBox($direction: row, $justification: center, $alignment: center, $wrap: wrap, $spacing: stretch, $display: flex) {
 	@include flexed(display, $display);
 	@include flexed(flex-direction, $direction);
 	@include flexed(flex-wrap, $wrap);

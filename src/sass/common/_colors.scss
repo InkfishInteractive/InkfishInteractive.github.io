@@ -1,11 +1,13 @@
 $color-midnight-blue: #1e1f26;
 $color-indigo-ink: #283655;
 $color-sea: #2f496e;
-$color-grecian-blue: #2988bc;
+// $color-grecian-blue: #2988bc;
+$color-ruby-red: #a01d26;
 $color-coral: #ed8c72;
 $color-ink: #20232a;
 $color-paper: #f4f4ef;
 $color-shadow: #2a3132;
+$color-periwinkle: #d0e1f9;
 
 // inherited
 $color-black: $color-ink;
@@ -14,7 +16,7 @@ $color-dark-gray: rgba($color-ink,0.64);
 $color-white: rgba($color-paper, 1);
 $color-primary: $color-indigo-ink;
 $color-accent-light: $color-coral;
-$color-accent-dark: $color-coral;
+$color-accent-dark: $color-ruby-red;
 // standards
 $color-ink-dark: rgba($color-ink, 0.9);
 $color-ink-light: rgba($color-paper, 0.9);
@@ -23,35 +25,59 @@ $color-ink-light: rgba($color-paper, 0.9);
 //themes
 @mixin theme-dark {
 	color: $color-ink-light;
-	background-color: $color-black;
+	background-color: $color-midnight-blue;
+	a:link, a:visited {
+		color: $color-accent-light;
+	}
 }
 @mixin theme-mid-dark {
 	color: $color-ink-light;
 	background-color: $color-indigo-ink;
+	a:link, a:visited {
+		color: $color-accent-light;
+	}
 }
 @mixin theme-mid-light {
 	color: $color-ink-light;
-	background-color: $color-indigo-ink;
+	background-color: $color-sea;
+	a:link, a:visited {
+		color: $color-accent-light;
+	}
 }
 @mixin theme-light {
 	color: $color-ink-dark;
-	background-color: $color-white;
+	background-color: rgba($color-periwinkle, 1);
+	a:link, a:visited {
+		color: $color-accent-dark;
+	}
 }
 
 // basic themes
 @mixin theme-basic-dark {
 	color: $color-ink-light;
 	background-color: $color-black;
+	a:link, a:visited {
+		color: $color-accent-light;
+	}
 }
 @mixin theme-basic-mid-dark {
 	color: $color-ink-light;
 	background-color: lighten($color-black, 10%);
+	a:link, a:visited {
+		color: $color-primary;
+	}
 }
 @mixin theme-basic-mid-light {
 	color: $color-ink-light;
 	background-color: lighten($color-black, 80%);
+	a:link, a:visited {
+		color: $color-primary;
+	}
 }
 @mixin theme-basic-light {
 	color: $color-ink-dark;
 	background-color: $color-white;
+	a:link, a:visited {
+		color: $color-primary;
+	}
 }

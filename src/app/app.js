@@ -15,7 +15,9 @@ function NkMarketController($scope, copy, $sce)
 	$scope.brand = copy.brand;
     $scope.seal = $sce.trustAsHtml(copy.seal);
     $scope.logo = $sce.trustAsHtml(copy.logo);
-    $scope.description = copy.description;
+    $scope.description = $sce.trustAsHtml(copy.description)
+    $scope.iconInfinity = $sce.trustAsHtml(copy.infinity);
+    $scope.iconInkwell = $sce.trustAsHtml(copy.inkwell);
 	$scope.tagline = copy.tagline;
 	$scope.contact = copy.contact;
 	$scope.address = copy.address;

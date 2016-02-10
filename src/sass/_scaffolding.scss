@@ -1,42 +1,74 @@
 html,
 body {
 	@include theme-basic-light;
-	font-family: "freight-big-pro", serif;
-	font-size: 18px;
+	@include bodyFont;
 	height: 100%;
 	margin: 0;
 	padding: 0;
 }
+a:link,
+a:visited {
+	color: $color-accent-dark;
+}
 header {
-    @include soFlexyBox(column);
-    @include theme-mid-dark;
-    height: 100vh;
-    .logo {
-        color: $color-accent-light;
-    }
-}
-a:link {
-    color: $color-accent-dark;
-}
-main > *,
-footer > * {
-	padding: $space-xxlg 0;
-	margin: 0;
-	min-height: 150px;
+	@include soFlexyBox(column);
+	@include theme-mid-dark;
+	// @include headingFont;
+	height: 100vh;
+	.logo {
+		color: $color-accent-light;
+        margin-bottom: $space-md;
+	}
+	.nk-tagline {
+		@include noBreakLines;
+		font-size: 1.3rem;
+		padding: 12px;
+        margin: 0;
+	}
+	.nk-description {
+		max-width: 400px;
+		text-align: center;
+		font-style: italic;
+        font-size: 1.12rem;
+        letter-spacing: 0.02rem;
+		span {
+			@include noBreakLines;
+		}
+	}
 }
 footer {
 	@include soFlexyBox(column);
 	@include theme-dark;
-	padding-top: $space-xxlg;
+	@include section_margin;
+	& > * {
+		@include soFlexyItem();
+	}
+	.nk-brand {
+		align-self: flex-start;
+		padding-left: $space-xxxlg;
+		padding-right: $space-xxxlg;
+	}
+}
+p,
+h3 {
+	margin: 7px 0;
+}
+h1,
+h2,
+h3,
+h4 {
+	@include headingFont;
 
-    & > * {
-        @include soFlexyItem();
-    }
-    .nk-brand{
-        align-self: flex-start;
-        padding-left: $space-xxxlg;
-        padding-right: $space-xxxlg;
-    }
+}
+.icon {
+	svg {
+		fill: currentColor;
+		width: 60px;
+		height: 60px;
+	}
+	.iconic-property-stroke {
+		stroke: currentColor;
+	}
 }
 .nk-brand {
 	svg {
@@ -49,14 +81,48 @@ footer {
 	}
 }
 .logo {
-    svg {
+	svg {
 		width: 180px;
 	}
 }
-.nk-social {}
-.nk-imprint {}
-.nk-contact {}
-.nk-description {}
+.copy {
+	@include standard_margin;
+}
+.nk-design,
+.nk-create,
+.nk-mobilize {
+	@include theme-light;
+}
+.nk-design {}
+.nk-create {}
+.nk-mobilize {}
+.nk-sample {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	.sample {
+		@include aspect-ratio(1,1);
+		width: 33.3333%;
+		flex: auto;
+	}
+}
+.nk-together {
+	@include section_margin;
+	@include theme-mid-light;
+	@include soFlexyBox(column);
+}
+.nk-latest {
+	@include theme-light;
+}
+.nk-business {
+	@include section_margin;
+	@include theme-mid-dark;
+	@include soFlexyBox(column);
+	.icon {
+		padding-left: 32px;
+		margin-bottom: $space-lg;
+	}
+}
 .nk-legal {}
 .icon-button {
 	@include theme-basic-mid-light;

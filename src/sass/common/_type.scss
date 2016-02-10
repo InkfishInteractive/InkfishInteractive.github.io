@@ -1,0 +1,15 @@
+// $body-typeface: "phoreuscherokee", sans-serif;
+$body-typeface: "freight-big-pro", serif;
+$heading-typeface: "freight-big-pro", serif;
+
+
+@mixin bodyFont {
+	font-family: $body-typeface;
+	font-weight: 300;
+	font-size: 18px;
+}
+
+@mixin headingFont {
+	font-family: $heading-typeface;
+	font-weight: 700;
+}
