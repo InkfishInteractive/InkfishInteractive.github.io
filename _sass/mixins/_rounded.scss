@@ -1,3 +1,0 @@
-@mixin rounded($amount: $base-corners) {
-    @prefixed (border-radius, $amount);
-}

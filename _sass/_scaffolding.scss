@@ -10,45 +10,6 @@ a:link,
 a:visited {
 	color: $color-accent-dark;
 }
-header {
-	@include soFlexyBox(column);
-	@include theme-mid-dark;
-	// @include headingFont;
-	height: 100vh;
-	.logo {
-		color: $color-accent-light;
-        margin-bottom: $space-md;
-	}
-	.nk-tagline {
-		@include noBreakLines;
-		font-size: 1.3rem;
-		padding: 12px;
-        margin: 0;
-	}
-	.nk-description {
-		max-width: 400px;
-		text-align: center;
-		font-style: italic;
-        font-size: 1.12rem;
-        letter-spacing: 0.02rem;
-		span {
-			@include noBreakLines;
-		}
-	}
-}
-footer {
-	@include soFlexyBox(column);
-	@include theme-dark;
-	@include section_margin;
-	& > * {
-		@include soFlexyItem();
-	}
-	.nk-brand {
-		align-self: flex-start;
-		padding-left: $space-xxxlg;
-		padding-right: $space-xxxlg;
-	}
-}
 p,
 h3 {
 	margin: 7px 0;
@@ -88,42 +49,7 @@ h4 {
 .copy {
 	@include standard_margin;
 }
-.nk-design,
-.nk-create,
-.nk-mobilize {
-	@include theme-light;
-}
-.nk-design {}
-.nk-create {}
-.nk-mobilize {}
-.nk-sample {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	.sample {
-		@include aspect-ratio(1,1);
-		width: 33.3333%;
-		flex: auto;
-	}
-}
-.nk-together {
-	@include section_margin;
-	@include theme-mid-light;
-	@include soFlexyBox(column);
-}
-.nk-latest {
-	@include theme-light;
-}
-.nk-business {
-	@include section_margin;
-	@include theme-mid-dark;
-	@include soFlexyBox(column);
-	.icon {
-		padding-left: 32px;
-		margin-bottom: $space-lg;
-	}
-}
-.nk-legal {}
+
 .icon-button {
 	@include theme-basic-mid-light;
 	width: 50px;
