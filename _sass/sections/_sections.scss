@@ -1,6 +1,5 @@
 header {
 	@include theme-mid-dark;
-	// @include headingFont;
 	height: 100vh;
 	.logo {
 		color: $color-accent-light;
@@ -26,6 +25,7 @@ header {
 footer {
 	@include theme-dark;
 	@include section_margin;
+
 	.nk-brand {
 		align-self: flex-start;
 		padding-left: $space-xxxlg;
