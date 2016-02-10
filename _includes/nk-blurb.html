@@ -1,0 +1,16 @@
+{% if include.section.graphic %}
+<div class="graphic">
+  <img src="{{include.section.graphic.source}}" alt="{{includes.section.graphic.cutline}}"/>
+</div>
+{% endif %}
+{% if include.section.icon %}
+<div class="icon">
+  {{site.data.icons[include.section.icon]}}
+</div>
+{% endif %}
+{% if include.section.title %}
+<h3>{{include.section.title | markdownify}}</h3>
+{% endif %}
+{% if include.section.body %}
+<p>{{include.section.body | markdownify}}</p>
+{% endif %}

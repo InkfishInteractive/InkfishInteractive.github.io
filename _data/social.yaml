@@ -1,0 +1,9 @@
+- site: twitter
+  title: twitter
+  link: //twitter.com
+- site: facebook
+  title: facebook
+  link: //facebook.com
+- site: google
+  title: google+
+  link: //plus.google.com

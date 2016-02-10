@@ -1,0 +1,22 @@
+{
+  "name": "Inkfish",
+  "authors": [
+    "Xristopher Anderton <xris@tikidream.com>"
+  ],
+  "description": "Inkfish site",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "inkfish.ink",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-strings": "normalize#^1.0.4"
+  }
+}
