@@ -7,8 +7,9 @@ $space-xxxlg: 36px;
 $space-xxxxlg: 42px;
 $space-xxxxxlg: 72px;
 $space-huge: 100px;
+$space-xhuge: 140px;
 @mixin standard-margin {
-	padding: $space-lg $space-xxxlg;
+	padding: $space-lg $space-xhuge;
 	min-height: 150px;
 }
 @mixin section-margin {

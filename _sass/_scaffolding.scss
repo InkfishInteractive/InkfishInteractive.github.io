@@ -27,15 +27,20 @@ a {
 		transform: scaleX(1);
 	}
 }
-p,
 h3 {
-	margin: 7px 0;
+	margin: 7px 0 0;
+}
+p {
+	margin: 0 0 7px;
 }
 h1,
 h2,
 h3,
 h4 {
 	@include heading-font;
+}
+h3 {
+	font-size: 2rem;
 }
 .icon {
 	svg {
