@@ -1,6 +1,7 @@
 design:
   title: Design
   slug: nk-design
+  icon: brush
   body: >
     Inkfish can help design your journey. Together, we can create a place for
     your business to grow on the web. We'll design a plan that fits your needs
@@ -9,6 +10,7 @@ design:
 create:
   title: Create
   slug: nk-create
+  icon: signpost
   body: >
     Inkfish can create an effective web presence for your business, which will
     help guide customers to you by delivering an intuitive experience. We can
@@ -17,6 +19,7 @@ create:
 mobilize:
   title: Mobilize
   slug: nk-mobilize
+  icon: tablet
   body: >
     Inkfish can tame mobile tech with apps designed to your needs. We can give
     you the power to connect with customers and grow your business through

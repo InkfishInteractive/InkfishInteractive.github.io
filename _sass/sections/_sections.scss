@@ -1,12 +1,13 @@
 header {
 	@include theme-mid-dark;
+	@include section-flex;
 	height: 100vh;
 	.logo {
-		color: $color-accent-light;
+		color: $color-accent-dark;
 		margin-bottom: $space-md;
 	}
 	.nk-tagline {
-		@include noBreakLines;
+		@include no-breaklines;
 		font-size: 1.3rem;
 		padding: 12px;
 		margin: 0;
@@ -18,13 +19,19 @@ header {
 		font-size: 1.12rem;
 		letter-spacing: 0.02rem;
 		span {
-			@include noBreakLines;
+			@include no-breaklines;
 		}
 	}
 }
 footer {
 	@include theme-dark;
-	@include section_margin;
+	@include section-margin;
+	@include section-flex;
+	font-style: italic;
+	font-size: 1.4rem;
+	font-weight: 100;
+	text-align: center;
+	padding-top: $space-xxxxxlg;
 
 	.nk-brand {
 		align-self: flex-start;
@@ -35,11 +42,19 @@ footer {
 .nk-design,
 .nk-create,
 .nk-mobilize {
+	@include standard-margin;
+	@include section-margin;
+	@include section-flex;
+}
+.nk-design {
 	@include theme-light;
 }
-.nk-design {}
-.nk-create {}
-.nk-mobilize {}
+.nk-create {
+	@include theme-mid-light;
+}
+.nk-mobilize {
+	@include theme-mid-dark;
+}
 .nk-sample {
 	display: flex;
 	flex-wrap: wrap;
@@ -50,19 +65,39 @@ footer {
 		flex: auto;
 	}
 }
+
+.nk-contact {
+	margin-top: 50px;
+	margin-bottom: 100px;
+	font-size: 1.2rem;
+	line-height: 1.8rem;
+	text-align: center;
+	font-style: normal;
+	p {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
 .nk-together {
-	@include section_margin;
 	@include theme-mid-light;
+	@include section-margin;
+	@include section-flex;
 }
 .nk-latest {
 	@include theme-light;
 }
 .nk-business {
-	@include section_margin;
 	@include theme-mid-dark;
+	@include section_margin;
+	@include section-flex;
 	.icon {
 		padding-left: 32px;
 		margin-bottom: $space-lg;
 	}
 }
-.nk-legal {}
+.nk-imprint {
+	margin: 50px 12px;
+}
+.nk-legal {
+	margin: 125px 12px 75px;
+}

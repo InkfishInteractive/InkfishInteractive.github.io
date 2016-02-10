@@ -3,13 +3,13 @@ $body-typeface: "freight-big-pro", serif;
 $heading-typeface: "freight-big-pro", serif;
 
 
-@mixin bodyFont {
+@mixin body-font {
 	font-family: $body-typeface;
 	font-weight: 300;
 	font-size: 18px;
 }
 
-@mixin headingFont {
+@mixin heading-font {
 	font-family: $heading-typeface;
 	font-weight: 700;
 }
