@@ -1,13 +1,6 @@
 <footer>
 	<section class="nk-brand seal">{{site.seal}}</section>
 	<section class="nk-imprint">{{site.imprinted}}</section>
-	<section class="nk-social">
-		{% for social in site.data.social %}
-		<div class="icon-button">
-			<a href="{{social.link}}">{{social.title}}</a>
-		</div>
-		{% endfor %}
-	</section>
 	<section class="nk-contact">
 		{{site.address | markdownify}}
 		<p>{{site.phone}}</p>
