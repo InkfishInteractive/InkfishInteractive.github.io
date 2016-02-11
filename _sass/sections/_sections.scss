@@ -1,139 +1,160 @@
 header {
-	@include theme-mid-dark;
-	@include section-flex;
-	height: 100vh;
-	.logo {
-		color: $color-accent-dark;
-		margin-bottom: $space-md;
-	}
-	.nk-tagline {
-		@include no-breaklines;
-		font-size: 1.3rem;
-		padding: 12px;
-		margin: 0;
-	}
-	.nk-description {
-		max-width: 500px;
-		text-align: center;
-		font-style: italic;
-		font-size: 1.12rem;
-		letter-spacing: 0.02rem;
-		span {
-			@include no-breaklines;
-		}
-	}
+  @include theme-mid-dark;
+  @include section-flex;
+  height: 100vh;
+  span {
+    @include no-breaklines;
+  }
+  .nk-tagline,
+  .nk-description {
+    @include media-query-viewport(small) {
+      span {
+        display: block;
+        width: $print-area-md;
+      }
+    }
+    @include media-query-viewport(medium) {
+      width: $print-area-md;
+      span {
+        display: inline;
+        width: auto;
+      }
+    }
+  }
+  .nk-brand {
+    text-align: center;
+    .logo {
+      color: $color-accent-dark;
+      margin-bottom: $space-md;
+    }
+  }
+  .nk-tagline {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 12px 0;
+    margin: 0;
+  }
+  .nk-description {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.12rem;
+    letter-spacing: 0.02rem;
+    span {
+      @include no-breaklines;
+    }
+  }
 }
 footer {
-	@include theme-dark;
-	@include section-flex;
-	font-style: italic;
-	font-size: 1.1rem;
-	font-weight: 100;
-	text-align: center;
-	padding-top: $space-xxxxxlg;
-	.nk-brand {
-		align-self: flex-start;
-		padding-left: $space-xxxlg;
-		padding-right: $space-xxxlg;
-	}
+  @include theme-dark;
+  @include section-flex;
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 100;
+  text-align: center;
+  padding-top: $space-xxxxxlg;
+  .nk-brand {
+    align-self: flex-start;
+    padding-left: $space-xxxlg;
+    padding-right: $space-xxxlg;
+  }
 }
 .nk-dna,
 .nk-create,
 .nk-together,
 .nk-business {
-	@include media-query(small) {
-		@include small-margin;
-	}
-	@include media-query(medium) {
-		@include standard-margin;
-	}
-	p,
-	div {
-		@include media-query(small) {
-			width: $print-area-sm;
-		}
-		@include media-query(medium) {
-			width: $print-area-md;
-		}
-		@include media-query(large) {
-			width: $print-area-lg;
-		}
-		span {
-			@include no-breaklines;
-		}
-	}
+  @include media-query-viewport(small) {
+    @include small-margin;
+  }
+  @include media-query-viewport(medium) {
+    @include standard-margin;
+  }
+  p,
+  div {
+    @include media-query-viewport(small) {
+      width: $print-area-sm;
+    }
+    @include media-query-viewport(medium) {
+      width: $print-area-md;
+    }
+    @include media-query-viewport(large) {
+      width: $print-area-lg;
+    }
+    span {
+      @include no-breaklines;
+    }
+  }
 }
 .nk-dna {
-	@include section-margin;
-	@include section-flex;
-	@include theme-mid-dark;
-	.icon svg {
-		width: 50px;
-		height: 50px;
-	}
+  @include section-margin;
+  @include section-flex;
+  @include theme-mid-dark;
+  .icon svg {
+    width: 50px;
+    height: 50px;
+  }
 }
 .nk-create {
-	@include section-margin;
-	@include section-flex;
-	@include theme-light;
-	.icon svg {
-		height: 45px;
-		width: 45px;
-	}
+  @include section-margin;
+  @include section-flex;
+  @include theme-light;
+  .icon svg {
+    height: 45px;
+    width: 45px;
+  }
 }
 .nk-mobilize {
-	@include theme-mid-dark;
-	.icon {
-		margin-bottom: 5px;
-	}
+  @include theme-mid-dark;
+  .icon {
+    margin-bottom: 5px;
+  }
 }
 .nk-sample {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	.sample {
-		@include aspect-ratio(1,1);
-		width: 33.3333%;
-		flex: auto;
-	}
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  .sample {
+    @include aspect-ratio(1,1);
+    width: 33.3333%;
+    flex: auto;
+  }
 }
 .nk-contact {
-	margin-top: 50px;
-	margin-bottom: 75px;
-	line-height: 1.2rem;
-	text-align: center;
-	font-style: normal;
-	font-size: 1rem;
-	p {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
+  margin-top: 50px;
+  margin-bottom: 75px;
+  line-height: 1.2rem;
+  text-align: center;
+  font-style: normal;
+  font-size: 1rem;
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 .nk-together {
-	@include theme-mid-light;
-	@include section-margin;
-	@include section-flex;
-	padding-top: 30px;
-	padding-bottom: 70px;
+  @include theme-mid-light;
+  @include section-margin;
+  @include section-flex;
+  padding-top: 30px;
+  padding-bottom: 70px;
 }
 .nk-latest {
-	@include theme-light;
+  @include theme-light;
 }
 .nk-business {
-	@include theme-mid-dark;
-	@include section_margin;
-	@include section-flex;
-	text-align: center;
-	h3 {
-		font-size: 1rem;
-	}
-	.icon {
-		padding-left: 32px;
-	}
+  @include theme-mid-dark;
+  @include section_margin;
+  @include section-flex;
+  text-align: center;
+  h3 {
+    font-size: 1rem;
+  }
+  .icon {
+    padding-left: 32px;
+  }
 }
 .nk-imprint {
-	margin: 50px 12px;
+  margin: 50px 12px;
 }
 .nk-legal {
-	margin: $space-xxxlg $space-lg $space-xxxxxlg;
+  margin: $space-xxxlg $space-lg $space-xxxxxlg;
 }

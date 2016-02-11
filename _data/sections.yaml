@@ -27,9 +27,9 @@ together:
   slug: nk-together
   icon: infinity
   body: >
-    <span>We’re passionate about beauty and functionality. Timeless sensibilities</span>
-    <span>and modern innovation. We take pride in our work, and we won’t be </span>
-    <span>satisfied until you’re satisfied.</span>
+    We’re passionate about beauty and functionality. Timeless sensibilities
+    and modern innovation. We take pride in our work, and we won’t be
+    satisfied until you’re satisfied.
 business:
   title: New Business
   slug: nk-business

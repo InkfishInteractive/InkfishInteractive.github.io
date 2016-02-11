@@ -6,23 +6,67 @@
  *   float: left;
  *  }
  */
-@mixin media-query($size) {
-
-    @if $size == "small" {
-        @media (min-width: $viewport-small-width) {
-            @content;
-        }
+// viewport minimums
+$viewport-micro-min: 1px;
+$viewport-small-min: 320px;
+$viewport-medium-min: 480px;
+$viewport-large-min: 800px;
+$viewport-huge-min: 1200px;
+// viewport maximums (below to allow for basing them off of mins)
+$viewport-micro-max: 414px;
+$viewport-small-max: $viewport-medium-min -1;
+$viewport-medium-max: $viewport-large-min -1;
+@mixin media-query-viewport($size) {
+  @if $size == "micro" {
+    @media (min-width: $viewport-micro-min) {
+      @content;
     }
-
-    @else if $size == "medium" {
-        @media (min-width: $viewport-medium-width) {
-            @content;
-        }
+  }
+  @else if $size == "small" {
+    @media (min-width: $viewport-small-min) {
+      @content;
     }
-
-    @else if $size == "large" {
-        @media (min-width: $viewport-large-width) {
-            @content;
-        }
+  }
+  @else if $size == "medium" {
+    @media (min-width: $viewport-medium-min){
+      @content;
     }
+  }
+  @else if $size == "large" {
+    @media (min-width: $viewport-large-min) {
+      @content;
+    }
+  }
+  @else if $size == "huge" {
+    @media (min-width: $viewport-huge-min) {
+      @content;
+    }
+  }
+}
+@mixin media-query-screen($size) {
+  @if $size == "micro" {
+    @media (min-device-width: $viewport-micro-min) and (max-device-width: $viewport-micro-max) {
+      @content;
+    }
+  }
+  @else if $size == "small" {
+    @media (min-device-width: $viewport-small-min) and (max-device-width: $viewport-small-max) {
+      @content;
+    }
+  }
+  @else if $size == "medium" {
+    @media (min-device-width: $viewport-medium-min) and (max-device-width: $viewport-medium-max) {
+      @content;
+    }
+  }
+  @else if $size == "large" {
+    @media (min-device-width: $viewport-large-min) {
+      @content;
+    }
+  }
+  @else if $size == "huge" {
+    @media (min-device-width: $viewport-huge-min) {
+      @content;
+    }
+  }
 }
