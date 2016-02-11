@@ -1,35 +1,47 @@
 design:
-  title: Design
-  slug: nk-design
-  icon: brush
+  title: We Relate
+  slug: nk-dna
+  icon: dna
   body: >
-    Inkfish can help design your journey. Together, we can create a place for
-    your business to grow on the web. We'll design a plan that fits your needs
-    and help you arrive at your destination - a comprehensive and user-friendly
-    experience for your customers.
+    At Inkfish we believe in small businesses because we are one. So we understand
+    the unique needs you have as a small business owner.
+
+
+    From logos and web design to advertising and branding, you need an effortless
+    and intuitive experience — for your customers and yourself. That’s why we’ll
+    work with you until we get it right. Together, we can create a place for your
+    business to grow on the web.
 create:
   title: Create
   slug: nk-create
-  icon: signpost
+  icon: brush
   body: >
-    Inkfish can create an effective web presence for your business, which will
-    help guide customers to you by delivering an intuitive experience. We can
-    provide a unique experience for your customers and help you stand out above
-    the crowd.
-mobilize:
-  title: Mobilize
-  slug: nk-mobilize
-  icon: tablet
-  body: >
-    Inkfish can tame mobile tech with apps designed to your needs. We can give
-    you the power to connect with customers and grow your business through
-    social media.
+    At Inkfish, we create graphics, custom apps, branding, websites, and visual
+    identities.
+
+
+    Our team has experience and expertise in art direction, advertising,
+    branding, illustration, mobile apps, signage, and web design.
 together:
-  title: Work together
+  title: Let's Work Together
   slug: nk-together
   icon: infinity
-  body: blurb about how great it is working together
+  body: >
+    <span>We’re passionate about beauty and functionality. Timeless sensibilities</span>
+    <span>and modern innovation. We take pride in our work, and we won’t be </span>
+    <span>satisfied until you’re satisfied.</span>
 business:
-  title: New business
+  title: New Business
   slug: nk-business
   icon: inkwell
+something:
+  title: something
+  slug: nk-something
+  icon: infinity
+  body: >
+    At Inkfish we believe in small businesses because we are one. So we understand
+    the unique needs you have as a small business owner. From logos and web design
+    to advertising and branding, you need an effortless and intuitive experience —
+    for your customers and yourself. That’s why we’ll work with you until we get
+    it right. Together, we can create a place for  your business to grow on the
+    web.

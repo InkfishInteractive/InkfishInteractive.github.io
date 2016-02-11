@@ -8,8 +8,18 @@ $space-xxxxlg: 42px;
 $space-xxxxxlg: 72px;
 $space-huge: 100px;
 $space-xhuge: 140px;
+$viewport-small-width: 1px;
+$viewport-medium-width: 545px;
+$viewport-large-width: 1350px;
+$print-area-sm: auto;
+$print-area-md: 500px;
+$print-area-lg: 600px;
 @mixin standard-margin {
 	padding: $space-lg $space-xhuge;
+	min-height: 150px;
+}
+@mixin small-margin {
+	padding: $space-lg $space-xxlg;
 	min-height: 150px;
 }
 @mixin section-margin {

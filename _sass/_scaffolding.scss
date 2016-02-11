@@ -27,9 +27,6 @@ a {
 		transform: scaleX(1);
 	}
 }
-h3 {
-	margin: 7px 0 0;
-}
 p {
 	margin: 0 0 7px;
 }
@@ -40,9 +37,11 @@ h4 {
 	@include heading-font;
 }
 h3 {
-	font-size: 2rem;
+	font-size: 1.6rem;
+	margin: 9px 0 7px;
 }
 .icon {
+	text-align: center;
 	svg {
 		fill: currentColor;
 		width: 60px;
