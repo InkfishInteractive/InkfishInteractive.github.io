@@ -23,8 +23,8 @@ $print-area-lg: 600px;
 	min-height: 150px;
 }
 @mixin section-margin {
-	padding-top: $space-huge;
-	padding-bottom: $space-huge;
+	padding-top: $space-xxxlg;
+	padding-bottom: $space-xxxxxlg;
 }
 @mixin section-flex {
 	display: -ms-flexbox;

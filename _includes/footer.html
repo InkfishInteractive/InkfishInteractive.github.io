@@ -8,13 +8,6 @@
 			<a href="mailto:{{site.data.brand.email}}">{{site.email}}</a>
 		</p>
 	</section>
-	<section class="nk-services">
-		{% for service in site.data.services %}
-		<p>
-			<a href="{{service.link}}">{{service.title}}</a>
-		</p>
-		{% endfor %}
-	</section>
 	<section class="nk-legal">
 		{{site.legal | markdownify}}
 	</section>
