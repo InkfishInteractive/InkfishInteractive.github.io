@@ -1,6 +1,11 @@
 header {
+  background: url("../ocean-experiment-001.png") no-repeat center center fixed;
   @include theme-mid-dark;
   @include section-flex;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   height: 100vh;
   span {
     @include no-breaklines;
@@ -87,7 +92,7 @@ footer {
 .nk-dna {
   @include section-margin;
   @include section-flex;
-  @include theme-mid-dark;
+  @include theme-light;
   .icon svg {
     width: 50px;
     height: 50px;
@@ -96,7 +101,7 @@ footer {
 .nk-create {
   @include section-margin;
   @include section-flex;
-  @include theme-light;
+  @include theme-mid-dark;
   .icon svg {
     height: 45px;
     width: 45px;
