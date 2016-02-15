@@ -32,6 +32,14 @@ email: hello@inkfish.ink
 imprinted: Designed and developed in New England
 legal: "&copy; 2016 Inkfish. All Rights Reserved"
 
+# Social sites
+social:
+  - title: twitter
+    link: //twitter.com
+  - title: facebook
+    link: //facebook.com
+  - title: google+
+    link: //plus.google.com
 
 # Build settings
 markdown: kramdown

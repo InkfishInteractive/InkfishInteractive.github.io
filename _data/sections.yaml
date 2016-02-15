@@ -1,7 +1,9 @@
-design:
+relate:
   title: We Relate
-  slug: nk-dna
-  icon: dna
+  slug: nk-relate
+  illumination:
+    source: art-nouveau-octopus-yin-yang.svg
+    cutline: Art nouveau octopuses in a yin yang
   body: >
     At Inkfish we believe in small businesses because we are one. So we understand
     the unique needs you have as a small business owner.
@@ -14,7 +16,9 @@ design:
 create:
   title: Create
   slug: nk-create
-  icon: brush
+  illumination:
+    source: nautilus
+    cutline: Nautilus
   body: >
     At Inkfish, we create graphics, custom apps, branding, websites, and visual
     identities.

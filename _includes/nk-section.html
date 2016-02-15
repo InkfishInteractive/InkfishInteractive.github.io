@@ -1,7 +1,11 @@
 {% if include.section.graphic %}
 <div class="graphic">
-  <img src="{{include.section.graphic.source}}" alt="{{includes.section.graphic.cutline}}"/>
+  <img src="img/{{include.section.graphic.source}}" alt="{{includes.section.graphic.cutline}}"/>
 </div>
+{% endif %}
+{% if include.section.illumination %}
+<div class="illuminated">
+<div class="illumination"></div>
 {% endif %}
 {% if include.section.icon %}
 <div class="icon">
@@ -13,4 +17,7 @@
 {% endif %}
 {% if include.section.body %}
 {{include.section.body | markdownify}}
+{% endif %}
+{% if include.section.illumination %}
+</div>
 {% endif %}

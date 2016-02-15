@@ -22,6 +22,7 @@ $color-accent-light: #4188ac;
 $color-accent-dark: $color-coral;
 $color-ink-dark: rgba($color-ink, 0.9);
 $color-ink-light: rgba($color-paper, 0.9);
+$color-ink-heading: rgba($color-coral, 1);
 $color-icon: $color-ink-light;
 
 //primaries
@@ -29,7 +30,7 @@ $color-icon: $color-ink-light;
 //themes
 @mixin theme-dark {
 	color: $color-ink-light;
-	background-color: $color-midnight-blue;
+	background-color: rgba($color-midnight-blue, 1.0);
 	a:link, a:visited {
 		color: $color-accent-light;
 	}
@@ -42,7 +43,7 @@ $color-icon: $color-ink-light;
 }
 @mixin theme-mid-dark {
 	color: $color-ink-light;
-	background-color: $color-indigo-ink;
+	background-color: rgba($color-indigo-ink, 1.0);
 	a:link, a:visited {
 		color: $color-accent-light;
 	}
@@ -55,7 +56,7 @@ $color-icon: $color-ink-light;
 }
 @mixin theme-mid-light {
 	color: $color-ink-light;
-	background-color: $color-sea;
+	background-color: rgba($color-sea, 1.0);
 	a:link, a:visited {
 		color: $color-accent-light;
 	}
@@ -68,7 +69,7 @@ $color-icon: $color-ink-light;
 }
 @mixin theme-light {
 	color: $color-ink-light;
-	background-color: $color-stone;
+	background-color: rgba($color-stone, 1.0);
 	a:link, a:visited {
 		color: lighten($color-accent-light, 50%);
 	}

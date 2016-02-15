@@ -1,11 +1,14 @@
-header {
+body {
   background: url("../ocean-experiment-001.png") no-repeat center center fixed;
-  @include theme-mid-dark;
-  @include section-flex;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+header {
+  @include theme-mid-dark;
+  @include section-flex;
+  background: transparent;
   height: 100vh;
   span {
     @include no-breaklines;
@@ -62,8 +65,29 @@ footer {
     padding-left: $space-xxxlg;
     padding-right: $space-xxxlg;
   }
+  .nk-contact {
+    margin-top: 50px;
+    margin-bottom: 75px;
+    line-height: 1.2rem;
+    text-align: center;
+    font-style: normal;
+    font-size: 1rem;
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .nk-latest {
+    @include theme-light;
+  }
+  .nk-imprint {
+    margin: 50px 12px;
+  }
+  .nk-legal {
+    margin: $space-xxxlg $space-lg $space-xxxxxlg;
+  }
 }
-.nk-dna,
+.nk-relate,
 .nk-create,
 .nk-together,
 .nk-business {
@@ -89,61 +113,70 @@ footer {
     }
   }
 }
-.nk-dna {
-  @include section-margin;
-  @include section-flex;
-  @include theme-light;
-  .icon svg {
-    width: 50px;
-    height: 50px;
-  }
-}
 .nk-create {
   @include section-margin;
   @include section-flex;
   @include theme-mid-dark;
+  background: transparent;
   .icon svg {
     height: 45px;
     width: 45px;
   }
-}
-.nk-mobilize {
-  @include theme-mid-dark;
-  .icon {
-    margin-bottom: 5px;
+  .illuminated h3 {
+    margin-left: 1.9rem;
+    font-size: 2.6rem;
+    margin: 0 0 0.5rem;
+    text-align: center;
   }
+  .illumination {
+    background-image: url("../img/nautilus.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: right;
+    height: 7rem;
+    shape-outside: url("../img/nautilus.svg");
+    shape-margin: 1rem;
+    width: 9rem;
+    margin-left: 1rem;
+    margin-top: 4.8rem;
 }
-.nk-sample {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  .sample {
-    @include aspect-ratio(1,1);
-    width: 33.3333%;
-    flex: auto;
+}
+.nk-relate {
+  @include section-margin;
+  @include section-flex;
+  // @include theme-light;
+  @include theme-dark;
+  // background: transparent;
+  .icon svg {
+    width: 50px;
+    height: 50px;
   }
-}
-.nk-contact {
-  margin-top: 50px;
-  margin-bottom: 75px;
-  line-height: 1.2rem;
-  text-align: center;
-  font-style: normal;
-  font-size: 1rem;
-  p {
-    margin-top: 0;
-    margin-bottom: 0;
+  .illuminated h3 {
+    margin-left: 1.9rem;
+    font-size: 2.6rem;
+    margin: 0 0 0.5rem;
+    text-align: center;
+  }
+  .illumination {
+    background-image: url("../img/art-nouveau-octopus-yin-yang.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: left;
+    height: 12rem;
+    shape-outside: url("../img/art-nouveau-octopus-yin-yang.svg");
+    shape-margin: 1rem;
+    width: 12rem;
+    margin-right: 1rem;
+    margin-top: 4.8rem;
   }
 }
 .nk-together {
-  @include theme-mid-light;
+  @include theme-dark;
+  background: transparent;
   @include section-margin;
   @include section-flex;
   padding-top: 30px;
   padding-bottom: 70px;
-}
-.nk-latest {
-  @include theme-light;
 }
 .nk-business {
   @include theme-mid-dark;
@@ -156,10 +189,4 @@ footer {
   .icon {
     padding-left: 32px;
   }
-}
-.nk-imprint {
-  margin: 50px 12px;
-}
-.nk-legal {
-  margin: $space-xxxlg $space-lg $space-xxxxxlg;
 }
