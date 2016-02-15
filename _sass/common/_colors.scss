@@ -28,6 +28,19 @@ $color-icon: $color-ink-light;
 //primaries
 
 //themes
+@mixin theme-reset {
+	color: inherit;
+	background-color: inherit;
+	a:link, a:visited {
+		color: inherit;
+	}
+	a:before {
+		background-color: inherit
+	}
+	.icon {
+		color: inherit;
+	}
+}
 @mixin theme-dark {
 	color: $color-ink-light;
 	background-color: rgba($color-midnight-blue, 1.0);

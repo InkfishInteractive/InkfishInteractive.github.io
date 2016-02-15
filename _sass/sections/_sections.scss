@@ -91,12 +91,20 @@ footer {
 .nk-create,
 .nk-together,
 .nk-business {
+  @include media-query-viewport(micro) {
+    @include small-margin;
+    @include section-margin-mobile;
+  }
   @include media-query-viewport(small) {
     @include small-margin;
+    @include section-margin-mobile;
   }
   @include media-query-viewport(medium) {
     @include standard-margin;
+    @include section-margin;
   }
+  @include section-flex;
+  position: relative;
   p,
   div {
     @include media-query-viewport(small) {
@@ -112,76 +120,80 @@ footer {
       @include no-breaklines;
     }
   }
+  .illuminated {
+    @include media-query-viewport(medium) {
+      @include section-margin;
+    }
+  }
 }
 .nk-create {
-  @include section-margin;
-  @include section-flex;
   @include theme-mid-dark;
-  // background: transparent;
+  $illust: nautilus;
   .icon svg {
     height: 45px;
     width: 45px;
   }
-  .illuminated h3 {
-    margin-left: 1.9rem;
-    font-size: 2.6rem;
-    margin: 0 0 0.5rem;
-    text-align: center;
+  .illuminated {
+    @include media-query-viewport-max(medium) {
+      @include theme-mid-dark;
+      background-image: illustration($illust);
+    }
   }
   .illumination {
-    background-image: url("../img/nautilus.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    float: right;
-    height: 7rem;
-    shape-outside: url("../img/nautilus.svg");
-    shape-margin: 1rem;
-    width: 9rem;
-    margin-left: 1rem;
-    margin-top: 4.8rem;
-}
+    @include media-query-viewport-max(medium) {
+      display: none;
+    }
+    @include media-query-viewport(medium) {
+      @include prefixed(shape-outside, illustration($illust));
+      float: right;
+      background-image: illustration($illust);
+      height: 7rem;
+      width: 9rem;
+    }
+  }
 }
 .nk-relate {
-  @include section-margin;
-  @include section-flex;
+  $illust: octopus-yin-yang;
   @include theme-dark;
   .icon svg {
     width: 50px;
     height: 50px;
   }
-  .illuminated h3 {
-    margin-left: 1.9rem;
-    font-size: 2.6rem;
-    margin: 0 0 0.5rem;
-    text-align: center;
+  .illuminated {
+    @include media-query-viewport-max(medium) {
+      @include theme-dark;
+      background-image: illustration($illust);
+    }
+    @include media-query-viewport(medium) {
+      @include theme-reset;
+      background-image: none;
+    }
   }
   .illumination {
-    background-image: url("../img/art-nouveau-octopus-yin-yang.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    float: left;
+    @include media-query-viewport-max(medium) {
+      display: none;
+    }
+    @include media-query-viewport(medium) {
+      @include prefixed(shape-outside, illustration($illust));
+      float: left;
+      margin-right: 1rem;
+    }
+    background-image: illustration(octopus-yin-yang);
     height: 12rem;
-    shape-outside: url("../img/art-nouveau-octopus-yin-yang.svg");
-    shape-margin: 1rem;
     width: 12rem;
-    margin-right: 1rem;
-    margin-top: 4.8rem;
   }
 }
 .nk-together {
   @include theme-mid-light;
-  @include section-margin;
-  @include section-flex;
   padding-top: 30px;
   padding-bottom: 70px;
 }
 .nk-business {
   @include theme-mid-dark;
-  @include section_margin;
-  @include section-flex;
   text-align: center;
   h3 {
-    font-size: 1rem;
+    font-size: 1.4rem;
+    margin-top: 10px;
   }
   .icon {
     padding-left: 32px;

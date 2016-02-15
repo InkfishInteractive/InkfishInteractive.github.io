@@ -43,6 +43,33 @@ $viewport-medium-max: $viewport-large-min -1;
     }
   }
 }
+@mixin media-query-viewport-max($size) {
+  @if $size == "micro" {
+    @media (max-width: $viewport-micro-min) {
+      @content;
+    }
+  }
+  @else if $size == "small" {
+    @media (max-width: $viewport-small-min) {
+      @content;
+    }
+  }
+  @else if $size == "medium" {
+    @media (max-width: $viewport-medium-min){
+      @content;
+    }
+  }
+  @else if $size == "large" {
+    @media (max-width: $viewport-large-min) {
+      @content;
+    }
+  }
+  @else if $size == "huge" {
+    @media (max-width: $viewport-huge-min) {
+      @content;
+    }
+  }
+}
 @mixin media-query-screen($size) {
   @if $size == "micro" {
     @media (min-device-width: $viewport-micro-min) and (max-device-width: $viewport-micro-max) {
