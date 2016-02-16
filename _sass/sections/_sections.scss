@@ -1,17 +1,30 @@
-body {
+body {}
+header {
+  @include theme-mid-dark;
+  @include section-flex;
   background: url("../ocean-experiment-001.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-header {
-  @include theme-mid-dark;
-  @include section-flex;
-  background: transparent;
-  height: 100vh;
+  background-attachment: scroll;
+  height: 110vh;
   span {
     @include no-breaklines;
+  }
+  .icon.down {
+    position: absolute;
+    bottom: $space-lg;
+    width: 100%;
+    svg {
+      height: 30px;
+      width: 30px;
+    }
+    h4 {
+      margin-bottom: 3px;
+      font-size: 1rem;
+      color: $color-coral;
+    }
   }
   .nk-tagline,
   .nk-description {
@@ -128,7 +141,7 @@ footer {
 }
 .nk-create {
   @include theme-mid-dark;
-  $illust: nautilus;
+  $illust: creative-octopus;
   .icon svg {
     height: 45px;
     width: 45px;
@@ -147,8 +160,9 @@ footer {
       @include prefixed(shape-outside, illustration($illust));
       float: right;
       background-image: illustration($illust);
-      height: 7rem;
-      width: 9rem;
+      height: 15rem;
+      width: 13rem;
+      margin-top: -1rem;
     }
   }
 }
@@ -184,9 +198,29 @@ footer {
   }
 }
 .nk-together {
+  $illust: nautilus;
   @include theme-mid-light;
   padding-top: 30px;
   padding-bottom: 70px;
+  .illuminated {
+    @include media-query-viewport-max(medium) {
+      @include theme-mid-light;
+      background-image: illustration($illust);
+    }
+  }
+  .illumination {
+    @include media-query-viewport-max(medium) {
+      display: none;
+    }
+    @include media-query-viewport(medium) {
+      @include prefixed(shape-outside, illustration($illust));
+      float: right;
+      background-image: illustration($illust);
+      height: 8rem;
+      width: 9rem;
+      margin-top: 1rem;
+    }
+  }
 }
 .nk-business {
   @include theme-mid-dark;

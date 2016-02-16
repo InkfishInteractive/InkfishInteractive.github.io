@@ -29,7 +29,7 @@ create:
 together:
   title: Let's Work Together
   slug: nk-together
-  icon: infinity
+  illumination: true
   body: >
     We’re passionate about beauty and functionality. Timeless sensibilities
     and modern innovation. We take pride in our work, and we won’t be
