@@ -28,7 +28,7 @@ $viewport-medium-max: $viewport-large-min -1;
     }
   }
   @else if $size == "medium" {
-    @media (min-width: $viewport-medium-min){
+    @media (min-width: $viewport-medium-min) {
       @content;
     }
   }
@@ -55,7 +55,7 @@ $viewport-medium-max: $viewport-large-min -1;
     }
   }
   @else if $size == "medium" {
-    @media (max-width: $viewport-medium-min){
+    @media (max-width: $viewport-medium-min) {
       @content;
     }
   }
@@ -95,5 +95,20 @@ $viewport-medium-max: $viewport-large-min -1;
     @media (min-device-width: $viewport-huge-min) {
       @content;
     }
+  }
+}
+@mixin media-all-iphone {
+  // iPhone
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    @content;
+  }
+  @media only screen and (min-device-width : 320px) and (max-device-width : 568px){
+    @content;
+  }
+  @media only screen and (min-device-width : 414px) and (max-device-width : 736px){
+    @content;
+  }
+  @media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+    @content;
   }
 }

@@ -69,7 +69,7 @@ $color-icon: $color-ink-light;
 }
 @mixin theme-mid-dark {
 	color: $color-ink-light;
-	background-color: rgba($color-indigo-ink, 1.0);
+	background-color: rgba(darken($color-indigo-ink, 5%), 1.0);
 	a:link, a:visited {
 		color: $color-accent-light;
 	}
