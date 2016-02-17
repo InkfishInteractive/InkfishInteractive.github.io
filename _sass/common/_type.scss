@@ -1,15 +1,43 @@
-$base-font-size: 20px;
-$body-typeface: "freight-big-pro", serif;
+$base-font-size: 16px;
+$body-typeface: "freight-text-pro", serif;
 $heading-typeface: "freight-big-pro", serif;
-
-
 @mixin body-font {
-	font-family: $body-typeface;
-	font-weight: 400;
-	font-size: $base-font-size;
+  font-family: $body-typeface;
+  font-weight: 500;
+  font-size: $base-font-size;
+  line-height: 1.45;
+  @include prefixed(font-smoothing, antialiased);
+  @include prefixed(letter-spacing, -.01em);
 }
-
 @mixin heading-font {
-	font-family: $heading-typeface;
-	font-weight: 700;
+  font-family: $heading-typeface;
+  font-weight: 900;
+	line-height: 1;
+	@include prefixed(margin-before, 0);
+	@include prefixed(margin-after, 0);
+	@include prefixed(margin-start, 0);
+	@include prefixed(margin-end, 0);
+}
+p {
+  margin: 0 0 0.8rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include heading-font;
+  color: $color-ink-heading;
+  text-align: center;
+	line-height: 2;
+}
+h2 {
+	font-size: $base-font-size * 2.6667;
+}
+h3 {
+  font-size: $base-font-size * 2;
+}
+h4 {
+  font-size: $base-font-size * 1.3333;
 }

@@ -1,4 +1,3 @@
-body {}
 html,
 header,
 footer,
@@ -43,7 +42,7 @@ header {
   }
   .nk-tagline,
   .nk-description {
-    @include media-query-viewport(small) {
+    @include media-query-viewport-max(medium) {
       span {
         display: block;
         width: $print-area-md;
@@ -115,21 +114,13 @@ footer {
     margin: $space-xxxlg $space-lg $space-xxxxxlg;
   }
 }
-.nk-relate,
-.nk-create,
-.nk-together,
-.nk-business {
-  @include media-query-viewport(micro) {
-    @include small-margin;
-    @include section-margin-mobile;
-  }
-  @include media-query-viewport(small) {
-    @include small-margin;
-    @include section-margin-mobile;
+.nk-section {
+  @include media-query-viewport-max(medium) {
+    padding: $space-xxxxlg $space-sm $space-xxxxlg $space-md;
   }
   @include media-query-viewport(medium) {
-    @include standard-margin;
-    @include section-margin;
+    padding: $space-lg $space-xhuge;
+  	min-height: 150px;
   }
   @include section-flex;
   position: relative;
@@ -150,7 +141,7 @@ footer {
   }
   .illuminated {
     @include media-query-viewport(medium) {
-      @include section-margin;
+      // @include section-margin;
     }
   }
 }
@@ -215,8 +206,6 @@ footer {
 .nk-together {
   $illust: nautilus;
   @include theme-mid-light;
-  padding-top: 30px;
-  padding-bottom: 70px;
   .illuminated {
     @include media-query-viewport-max(medium) {
       @include theme-mid-light;

@@ -11,22 +11,7 @@ $space-xhuge: 140px;
 $print-area-sm: auto;
 $print-area-md: 500px;
 $print-area-lg: 600px;
-@mixin standard-margin {
-	padding: $space-lg $space-xhuge;
-	min-height: 150px;
-}
-@mixin small-margin {
-	padding: $space-lg $space-xxlg;
-	min-height: 150px;
-}
-@mixin section-margin {
-	padding-top: $space-xxxlg;
-	padding-bottom: $space-xxxxxlg;
-}
-@mixin section-margin-mobile {
-	padding-top: $space-xxxxxlg;
-	padding-bottom: $space-xxxxxlg;
-}
+
 @mixin section-flex {
 	display: -ms-flexbox;
 	display: -webkit-flex;
