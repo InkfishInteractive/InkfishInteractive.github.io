@@ -2,16 +2,16 @@
 layout: default
 ---
 <main>
-	<section class="{{site.data.sections.create.slug}}">
+	<section class="{{site.data.sections.create.slug}} nk-section">
 		{% include nk-section.html section=site.data.sections.create %}
 	</section>
-	<section class="{{site.data.sections.relate.slug}}">
+	<section class="{{site.data.sections.relate.slug}} nk-section">
 		{% include nk-section.html section=site.data.sections.relate %}
 	</section>
-	<section class="{{site.data.sections.together.slug}}">
+	<section class="{{site.data.sections.together.slug}} nk-section">
 		{% include nk-section.html section=site.data.sections.together %}
 	</section>
-	<section class="{{site.data.sections.business.slug}}">
+	<section class="{{site.data.sections.business.slug}} nk-section">
 		{% include nk-section.html section=site.data.sections.business %}
 		<p>{{site.phone}}</p>
 		<p><a href="mailto:{{site.email}}">{{site.email}}</a></p>

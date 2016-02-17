@@ -1,20 +1,35 @@
 body {}
+html,
+header,
+footer,
+.nk-section {
+  overflow-x: hidden;
+}
 header {
   @include theme-mid-dark;
   @include section-flex;
-  background: url("../ocean-experiment-001.png") no-repeat center center fixed;
+  background-image: url("../ocean-experiment-001.png");
+  background-repeat: no-repeat;
+  background-position: center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-attachment: scroll;
   height: 110vh;
+  @include media-query-viewport-max(medium) {
+    background-position-y: -150px;
+    padding-top: 30px;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
   span {
     @include no-breaklines;
   }
   .icon.down {
     position: absolute;
-    bottom: $space-lg;
+    bottom: 3px;
     width: 100%;
     svg {
       height: 30px;
@@ -66,7 +81,7 @@ header {
   }
 }
 footer {
-  @include theme-dark;
+  @include theme-black;
   @include section-flex;
   font-style: italic;
   font-size: 1.1rem;

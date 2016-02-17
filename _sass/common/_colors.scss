@@ -41,9 +41,22 @@ $color-icon: $color-ink-light;
 		color: inherit;
 	}
 }
-@mixin theme-dark {
+@mixin theme-black {
 	color: $color-ink-light;
 	background-color: rgba($color-midnight-blue, 1.0);
+	a:link, a:visited {
+		color: $color-accent-light;
+	}
+	a:before {
+		background-color: $color-accent-light;
+	}
+	.icon {
+		color: $color-icon;
+	}
+}
+@mixin theme-dark {
+	color: $color-ink-light;
+	background-color: rgba(lighten($color-midnight-blue, 3%), 1.0);
 	a:link, a:visited {
 		color: $color-accent-light;
 	}
