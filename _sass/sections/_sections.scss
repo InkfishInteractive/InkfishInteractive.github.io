@@ -6,7 +6,6 @@ footer,
 }
 header {
   @include theme-mid-dark;
-  @include section-flex;
   background-image: url("../ocean-experiment-001.png");
   background-repeat: no-repeat;
   background-position: center center fixed;
@@ -15,27 +14,39 @@ header {
   -o-background-size: cover;
   background-size: cover;
   background-attachment: scroll;
-  height: 110vh;
+  height: 100vh;
+  line-height: 1.2;
   @include media-query-viewport-max(medium) {
     background-position-y: -150px;
-    padding-top: 30px;
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
   span {
     @include no-breaklines;
   }
   .icon.down {
-    position: absolute;
-    bottom: 3px;
-    width: 100%;
     svg {
       height: 30px;
       width: 30px;
     }
     h4 {
-      margin-bottom: 3px;
+      line-height: 1.5;
       font-size: 1rem;
       color: $color-coral;
     }
@@ -56,6 +67,38 @@ header {
       }
     }
   }
+  .nk-brand, .nk-summary, header .guide {
+    flex: 1 0 auto;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .nk-summary {
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+  .guide {
+    padding-bottom: $space-lg;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
   .nk-brand {
     text-align: center;
     .logo {
@@ -68,12 +111,11 @@ header {
     font-size: 1.3rem;
     padding: 12px 0;
     margin: 0;
+    line-height: 1
   }
   .nk-description {
     text-align: center;
     font-style: italic;
-    font-size: 1.12rem;
-    letter-spacing: 0.02rem;
     span {
       @include no-breaklines;
     }
