@@ -9,6 +9,6 @@ published: true
 At Inkfish, we create graphics, custom apps, branding, websites, and visual
 identities.
 
-
+<!--mapbox ignore expertise-->
 Our team has experience and expertise in art direction, advertising,
 branding, illustration, mobile apps, digital publishing, and web design.
