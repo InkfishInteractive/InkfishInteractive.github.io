@@ -1,23 +1,20 @@
-{% if include.section.graphic %}
-<div class="graphic">
-  <img src="img/{{include.section.graphic.source}}" alt="{{includes.section.graphic.cutline}}"/>
-</div>
-{% endif %}
-{% if include.section.illumination %}
-<div class="illuminated">
-<div class="illumination"></div>
-{% endif %}
-{% if include.section.icon %}
-<div class="icon">
-  {{site.data.icons[include.section.icon]}}
-</div>
-{% endif %}
-{% if include.section.title %}
-<h3>{{include.section.title}}</h3>
-{% endif %}
-{% if include.section.body %}
-{{include.section.body | markdownify}}
-{% endif %}
-{% if include.section.illumination %}
-</div>
-{% endif %}
+<section class="nk-section{% if section.slug %} {{section.slug}}{% endif %}">
+  {% if section.graphic %}
+  <div class="graphic">
+    <img src="img/{{section.graphic.source}}" alt="{{section.graphic.cutline}}"/>
+  </div>
+  {% endif %}
+  {% if section.illumination %}
+  <div class="illuminated">
+    <div class="illumination"></div>
+    {% endif %}
+    {% if section.icon %}
+    <div class="icon">
+      {{site.data.icons[section.icon]}}
+    </div>
+    {% endif %}
+    {{ section.content }}
+    {% if section.illumination %}
+  </div>
+  {% endif %}
+</section>

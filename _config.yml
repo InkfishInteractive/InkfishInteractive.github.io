@@ -43,3 +43,7 @@ social:
 
 # Build settings
 markdown: kramdown
+
+# Collections
+collections:
+  - home

@@ -2,30 +2,8 @@
 layout: default
 ---
 <main>
-  <section class="{{site.data.sections.create.slug}} nk-section">
-    {% include nk-section.html section=site.data.sections.create %}
-  </section>
-  <section class="{{site.data.sections.relate.slug}} nk-section">
-    {% include nk-section.html section=site.data.sections.relate %}
-  </section>
-  <section class="{{site.data.sections.together.slug}} nk-section">
-    {% include nk-section.html section=site.data.sections.together %}
-  </section>
+  {% assign sections = (site.home | where: "published", "true" | sort: "weight") %}
+  {% for section in sections %}
+  {% include nk-section.html %}
+  {% endfor %}
 </main>
-<section class="{{site.data.sections.business.slug}} nk-section">
-  {% if site.data.sections.business.icon %}
-  <div class="icon">
-    {{site.data.icons[site.data.sections.business.icon]}}
-  </div>
-  {% endif %}
-  {% if site.data.sections.business.title %}
-  <h4>{{site.data.sections.business.title}}</h4>
-  {% endif %}
-  {% if site.data.sections.business.body %}
-  {{site.data.sections.business.body | markdownify}}
-  {% endif %}
-	<p>{{site.phone}}</p>
-  <p>
-    <a href="mailto:{{site.email}}">{{site.email}}</a>
-  </p>
-</section>

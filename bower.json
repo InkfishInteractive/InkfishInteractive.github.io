@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "normalize-strings": "normalize#^1.0.4"
+    "normalize-strings": "normalize#^1.0.4",
+    "jquery-smooth-scroll": "^1.7.2"
   }
 }
