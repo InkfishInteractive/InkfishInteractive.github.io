@@ -1,7 +1,7 @@
 <section class="nk-section{% if section.slug %} {{section.slug}}{% endif %}">
   {% if section.graphic %}
   <div class="graphic">
-    <img src="img/{{section.graphic.source}}" alt="{{section.graphic.cutline}}"/>
+    <img src="{{ site.github.url }}/img/{{section.graphic.source}}" alt="{{section.graphic.cutline}}"/>
   </div>
   {% endif %}
   {% if section.illumination %}
