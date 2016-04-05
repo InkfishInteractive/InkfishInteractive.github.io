@@ -8,4 +8,4 @@ published: true
 
 {{site.phone}}
 
-[{{site.email}}](mailto:{{site.email}})
+[nauticae@gmail.com](mailto:nauticae@gmail.com)
