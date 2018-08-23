@@ -1,9 +1,367 @@
----
-layout: default
----
-<main>
-  {% assign sections = (site.home | where: "published", "true" | sort: "weight") %}
-  {% for section in sections %}
-  {% include nk-section.html %}
-  {% endfor %}
-</main>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inkfish</title>
+    <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css"> -->
+    <style>
+    .loading--active{display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;-webkit-align-content:center;align-content:center;-webkit-flex-direction:column;flex-direction:column;position:fixed;top:0;left:0;height:100vh;width:100vw;background:#00a87e;z-index:99}.loading--inactive{visibility:hidden}.loading__copy{color:#ece6ef;text-align:center;font-size:1.3em;line-height:2em}.loading__logo{margin:0 auto;width:100px}.ready--inactive{visibility:hidden}
+    </style>
+    <link rel="stylesheet " href="https://use.typekit.net/mdt1ktv.css ">
+    <link rel="stylesheet " href="styles/main.css">
+  </head>
+  <body>
+    <svg class="for-accessibility-only">
+      <defs>
+        <style>.
+        #LogoSVG .logo {
+          fill: url(#LogoGrad);
+        }
+        .line{stroke: #FFFFFF; fill: none; stroke-width: 1.5;}
+        .arm{stroke-width: 2.5;}
+      </style>
+        <linearGradient id="linear-gradient" y1="56.06" x2="67.45" y2="56.06" gradientUnits="userSpaceOnUse"><stop offset="0.15" stop-color="#dfd520"/><stop offset="0.29" stop-color="#e2d938"/><stop offset="0.6" stop-color="#eae477"/><stop offset="1" stop-color="#f6f3d3"/></linearGradient>
+        <linearGradient id="character-mercy-linear-gradient-2" x1="3.22" y1="70.95" x2="72.26" y2="70.95" xlink:href="#linear-gradient"/><linearGradient id="character-mercy-linear-gradient-3" x1="31.14" y1="77.06" x2="77.51" y2="77.06" xlink:href="#linear-gradient"/><linearGradient id="character-mercy-linear-gradient-4" x1="57.6" y1="80.29" x2="83.74" y2="80.29" xlink:href="#linear-gradient"/><linearGradient id="character-mercy-linear-gradient-5" x1="4.3" y1="41.12" x2="57.28" y2="41.12" xlink:href="#linear-gradient"/><linearGradient id="character-mercy-linear-gradient-6" x1="164.55" y1="56.06" x2="232" y2="56.06" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f6f3d3"/><stop offset="0.4" stop-color="#eae477"/><stop offset="0.71" stop-color="#e2d938"/><stop offset="0.85" stop-color="#dfd520"/></linearGradient><linearGradient id="character-mercy-linear-gradient-7" x1="159.74" y1="70.95" x2="228.78" y2="70.95" xlink:href="#character-mercy-linear-gradient-6"/><linearGradient id="character-mercy-linear-gradient-8" x1="154.49" y1="77.06" x2="200.86" y2="77.06" xlink:href="#character-mercy-linear-gradient-6"/><linearGradient id="character-mercy-linear-gradient-9" x1="148.26" y1="80.29" x2="174.4" y2="80.29" xlink:href="#character-mercy-linear-gradient-6"/><linearGradient id="character-mercy-linear-gradient-10" x1="174.72" y1="41.12" x2="227.7" y2="41.12" xlink:href="#character-mercy-linear-gradient-6"/>
+        <linearGradient id="LogoGrad" x1="314.88" y1="325.46" x2="314.88" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#d40e8c"/>
+        <stop offset="0.32" stop-color="#a51e88"/>
+        <stop offset="0.78" stop-color="#673382"/>
+        <stop offset="1" stop-color="#4f3b80"/>
+      </linearGradient>
+      <linearGradient id="SocialControlGrad" x1="314.88" y1="325.46" x2="314.88" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ede6ee"/>
+      <stop offset="100%" stop-color="#ede6ee"/>
+    </linearGradient>
+      <linearGradient id="Social_Card_Gradient" x1="100.34" y1="144.74" x2="23.48" y2="11.62" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#d2148a"/><stop offset="0.31" stop-color="#a52187"/><stop offset="0.78" stop-color="#673482"/><stop offset="1" stop-color="#4f3b80"/></linearGradient>
+      </defs>
+    </svg>
+    <div class="loading loading--active">
+      <div class="loading__logo">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          data-name="Layer 1" viewBox="0 0 215 325"><title>inkfish-logo-2018</title>
+          <g id="arm" name="arm" opacity="1">
+                      <path id="shapePath1" d="M213.548,171.002 C213.305,176.451 212.427,181.84 210.649,186.992 C209.641,189.912 207.394,192.574 204.548,193.842 C200.897,195.557 196.3,194.962 193.233,192.326 C190.972,190.432 188.663,187.118 188.497,182.932 C187.462,172.621 183.936,161.938 176.628,154.322 C164.132,174.762 140.433,185.529 129.898,207.582 C121.163,223.009 116.581,240.778 116.938,258.512 C117.06,264.878 117.669,271.231 118.708,277.512 C119.038,280.122 118.228,283.072 116.158,286.172 L96.8376,314.912 C92.8376,320.972 81.1477,325.492 72.9376,324.182 L31.3076,317.592 C27.3076,316.962 25.1276,315.112 24.8176,312.742 C21.1481,273.849 26.4648,233.44 44.4976,198.452 C50.2033,187.239 57.0138,176.623 64.8276,166.762 C27.9867,162.824 -1.05296,126.537 1.57765,89.8718 C1.47341,38.057 51.0362,-2.45706 101.658,0.934799 C153.725,0.983383 202.418,43.2418 190.258,115.782 C205.428,129.744 214.263,150.345 213.548,171.002 M68.0976,111.682 C82.5162,121.331 94.4137,104.318 107.418,100.092 C110.497,98.714 113.65,97.4951 116.878,96.5118 C120.448,95.4602 124.096,94.6252 127.808,94.2818 C127.213,90.3944 126.386,86.4152 124.268,83.1018 C119.944,76.3387 115.137,71.309 111.798,68.6018 C108.042,65.9611 103.841,64.0168 99.3977,62.8618 C96.8071,62.1799 94.153,61.7677 91.4777,61.6318 C73.4264,61.5847 58.3609,79.2784 59.2377,96.9118 C59.3974,102.933 63.1377,108.192 68.0976,111.682 Z" class="line arm"/>
+              </g>
+              <g id="suckers" name="suckers" opacity="1">
+                  <path id="shapePath2" d="M106.644,65.7729 Z" class="line sucker"/>
+                  <path id="shapePath3" d="M110.467,66.9996 Z" class="line sucker"/>
+                  <path id="shapePath4" d="M132.848,76.3715 C134.086,79.912 136.974,82.8192 140.488,84.1215 C142.645,85.0357 145.308,83.052 144.928,80.7015 C144.46,77.0082 142.278,73.5802 139.138,71.5815 C137.855,70.817 136.264,70.7829 134.948,71.4915 C133.172,72.4069 132.292,74.4519 132.848,76.3715 Z" class="line sucker"/>
+                  <path id="shapePath5" d="M128.958,94.2115 L130.238,94.0815 C132.567,93.9075 134.904,93.8541 137.238,93.9215 L137.968,93.9215 C137.833,93.478 137.512,93.0852 137.388,92.6515 C136.604,91.3686 135.112,90.5736 133.618,90.5515 C131.351,90.1963 129.224,92.0031 128.958,94.2115 Z" class="line sucker"/>
+                  <path id="shapePath6" d="M133.858,86.9215 C134.716,84.4871 133.863,81.5508 131.788,80.0015 C129.478,78.3276 125.219,79.2086 124.478,82.1515 C124.397,84.8654 126.276,87.4174 128.688,88.5315 C130.466,89.3276 132.979,88.7806 133.858,86.9215 Z" class="line sucker"/>
+                  <path id="shapePath7" d="M124.428,67.4615 C126.171,69.5122 128.851,70.7153 131.538,70.7015 C133.19,70.7717 134.458,68.8001 133.628,67.3415 C132.389,64.9949 130.039,63.1994 127.398,62.8015 C124.903,62.213 122.817,65.4248 124.398,67.4615 L124.428,67.4615 Z" class="line sucker"/>
+                  <path id="shapePath8" d="M118.468,73.2315 C119.298,75.5402 121.372,77.3248 123.738,77.9215 C125.255,78.3563 127.058,77.094 126.938,75.4615 C126.698,73.0861 125.174,70.9169 123.068,69.8115 C120.894,68.6243 117.827,70.7403 118.468,73.2315 Z" class="line sucker"/>
+                  <path id="shapePath9" d="M111.338,63.5215 C113.821,64.7027 116.721,65.049 119.378,64.2715 C120.963,63.9712 121.201,61.6593 119.848,60.8915 C117.622,59.2486 114.796,58.5197 112.048,58.7115 C109.435,58.7466 108.993,62.6295 111.338,63.5215 Z" class="line sucker"/>
+                  <path id="shapePath10" d="M105.848,62.3415 C106.675,62.1851 107.906,61.6846 107.498,60.2767 C106.644,57.5933 100.697,57.8467 97.9183,59.0815 C94.2275,60.7215 99.2544,63.9428 105.848,62.3415 Z" class="line sucker"/>
+                  <path id="shapePath11" d="M110.348,155.921 C105.278,159.336 99.8303,162.229 94.0183,164.161 C94.342,170.133 101.739,170.249 105.728,166.611 C108.415,164.161 111.576,159.991 110.348,155.921 Z" class="line sucker"/>
+                  <path id="shapePath12" d="M69.2082,220.061 C67.9305,215.196 60.5024,213.581 57.7183,218.021 C55.3485,222.521 55.4561,228.157 57.7582,232.661 C59.1231,235.615 63.5554,236.56 65.8282,234.101 C69.1612,230.346 70.3915,224.918 69.2082,220.061 Z" class="line sucker"/>
+                  <path id="shapePath14" d="M73.3182,209.131 C77.5416,205.999 80.5479,201.05 80.9683,195.771 C81.7283,190.67 74.6064,187.428 71.2582,191.351 C67.6954,195.29 65.8453,200.735 66.3782,206.031 C66.4383,209.353 70.8046,211.303 73.3182,209.131 Z" class="line sucker"/>
+                  <path id="shapePath15" d="M72.9283,176.511 C77.7874,175.59 82.0304,171.597 83.1883,166.691 C78.9705,167.325 74.6952,167.378 70.4382,167.321 C67.1349,171.86 67.2092,177.232 72.9283,176.511 Z" class="line sucker"/>
+                  <path id="shapePath16" d="M86.3083,189.771 C90.3681,188.696 93.4966,184.842 93.7183,180.651 C93.8729,176.048 88.8212,171.209 84.2383,172.901 C80.4657,175.224 78.9703,180.072 79.5383,184.311 C79.9788,187.418 83.0735,190.319 86.3083,189.771 Z" class="line sucker"/>
+                  <path id="shapePath17" d="M57.8483,198.421 C61.7766,196.03 64.703,192.014 65.6982,187.531 C66.8848,183.235 61.0217,179.941 57.8882,183.061 C54.4827,186.178 52.3743,190.683 52.2882,195.311 C52.018,198.05 55.6671,200.006 57.8483,198.421 Z" class="line sucker"/>
+                  <path id="shapePath18" d="M41.4782,222.231 C42.3883,225.192 46.3884,226.484 48.8382,224.261 C52.4477,220.987 54.1968,215.906 53.8382,211.051 C53.8315,205.658 45.6238,203.451 43.0882,208.351 C40.596,212.461 39.7453,217.754 41.4782,222.231 Z" class="line sucker"/>
+                  <path id="shapePath19" d="M36.3483,292.311 C34.6201,288.053 27.8496,288.917 26.5482,293.521 C25.2321,298.179 26.5827,303.603 29.8382,307.171 C32.1113,309.663 35.832,309.125 36.7382,306.241 C38.6023,301.823 38.1389,296.724 36.3483,292.311 Z" class="line sucker"/>
+                  <path id="shapePath20" d="M38.8682,268.121 C37.4839,263.68 30.3935,263.971 29.3782,268.511 C28.1437,273.027 28.905,278.046 31.4682,281.971 C32.8913,284.443 36.9292,284.28 38.1482,281.701 L38.1482,281.621 C39.6602,277.439 40.5123,272.452 38.8682,268.121 Z" class="line sucker"/>
+                  <path id="shapePath21" d="M46.8282,237.351 C45.3104,229.644 35.7008,231.744 33.6382,237.771 C32.0022,242.553 32.185,247.6 34.0382,252.211 C35.2353,255.614 40.2421,256.44 42.4683,253.601 C46.0328,249.094 47.9715,243.08 46.8282,237.351 Z" class="line sucker"/>
+                  <path id="shapePath22" d="M55.432,297.345 C52.6637,291.461 44.2156,293.111 43.5382,300.461 C43.1378,304.807 44.4585,309.243 47.3382,312.521 C49.6187,315.118 53.8916,314.88 55.1782,311.831 C57.2177,307 57.4917,301.972 55.432,297.345 Z" class="line sucker"/>
+                  <path id="shapePath23" d="M58.6782,271.221 C56.3643,265.804 48.0331,267.557 47.5282,273.681 C47.1948,277.726 48.0145,281.78 50.3882,285.071 C52.0588,287.581 56.2887,287.636 57.8483,284.971 L57.8483,284.891 C60.21,280.78 60.4775,275.595 58.6782,271.221 Z" class="line sucker"/>
+
+                  <path id="shapePath24" d="M62.9882,244.941 C61.8631,240.503 55.6589,239.963 53.8382,244.291 C51.9942,248.675 51.6217,253.012 53.8382,257.236 C55.2601,259.945 59.6969,260.218 61.0289,257.737 C63.1686,253.752 63.9796,248.852 62.9882,244.941 Z" class="line sucker"/>
+                        <path id="shapePath13" d="M66.6882,271.791 C65.1262,276.948 65.7153,282.728 68.4082,287.411 C69.8284,290.33 74.4566,290.233 75.8282,287.311 C78.3049,282.536 78.8538,276.765 77.2282,271.611 C75.821,266.607 67.9871,266.792 66.6882,271.791 Z" class="line sucker"/>
+                  <path id="shapePath25" d="M79.2383,308.36 C79.3075,302.833 77.5587,294.282 70.5382,294.361 C67.1482,294.361 64.3282,296.461 63.7282,299.241 C62.8362,305.556 65.8353,315.335 72.9482,316.411 C77.9311,317.166 79.0113,312.312 79.2383,308.36 Z" class="line sucker"/>
+                  <path id="shapePath26" d="M83.3483,247.121 C83.0259,241.306 74.254,238.989 71.4182,244.281 C68.4883,248.795 67.627,254.644 69.2382,259.761 C70.3061,263.153 74.7955,264.68 77.3783,262.231 C81.5159,258.431 83.623,252.691 83.3483,247.121 Z" class="line sucker"/>
+                  <path id="shapePath27" d="M81.7183,216.611 C77.7825,220.928 76.1114,227.13 77.1283,232.861 C77.6062,236.458 82.2352,238.633 85.2282,236.451 C89.9478,233.107 92.8392,227.489 93.1783,221.721 C93.5044,216.175 85.5716,212.322 81.7183,216.611 Z" class="line sucker"/>
+                  <path id="shapePath28" d="M101.328,194.001 C98.7042,191.368 93.918,191.174 91.7483,194.391 C89.0601,197.685 87.9295,201.981 88.6483,206.171 C89.4004,212.338 96.2388,213.612 100.928,207.741 C104.006,203.889 105.706,197.44 101.288,194.001 L101.328,194.001 Z" class="line sucker"/>
+                  <path id="shapePath29" d="M117.928,175.321 C116.195,173.097 113.161,172.356 110.598,173.531 C105.718,176.651 100.751,184.274 104.238,189.921 C107.102,193.417 111.932,190.907 114.618,188.521 C118.169,185.472 121.6,179.53 117.888,175.321 L117.928,175.321 Z" class="line sucker"/>
+                  <path id="shapePath30" d="M130.238,160.201 C130.184,155.725 124.337,152.105 120.558,154.881 C117.302,157.921 116.064,162.807 117.028,167.101 C117.559,170.023 121.005,172.162 123.798,170.851 C127.736,168.868 130.074,164.531 130.238,160.201 Z" class="line sucker"/>
+                  <path id="shapePath31" d="M143.458,139.011 C140.363,139.019 137.186,138.785 134.228,139.911 C131.774,140.708 129.489,141.95 127.338,143.361 C127.177,145.112 127.24,146.877 127.528,148.611 C127.992,152.251 132.741,154.441 135.708,152.141 C137.613,150.754 139.244,149.024 140.518,147.041 C142.107,144.649 143.004,141.752 143.458,139.011 Z" class="line sucker"/>
+                  <path id="shapePath32" d="M151.508,95.6715 C151.219,92.665 149.975,89.8301 147.958,87.5815 C147.255,86.7911 146.246,86.3397 145.188,86.3415 C143.726,86.3137 142.393,87.1761 141.818,88.5215 L141.818,88.5915 C141.133,90.3346 140.858,92.2146 140.898,94.0815 C141.628,94.1415 142.368,94.2115 143.098,94.2915 C144.928,94.5015 146.748,94.7515 148.558,95.0815 C149.488,95.2615 150.478,95.4615 151.458,95.6715 L151.508,95.6715 Z" class="line sucker"/>
+                  <path id="shapePath33" d="M175.588,146.561 C172.506,145.932 174.728,150.044 175.828,151.171 C176.692,152.357 177.723,153.411 178.888,154.301 C179.459,154.848 180.34,155.095 181.068,154.701 C181.748,154.251 181.698,153.021 181.018,151.841 C179.851,149.761 177.817,147.739 175.588,146.561 Z" class="line sucker"/>
+                  <path id="shapePath34" d="M193.708,170.771 C193.619,173.096 193.937,175.499 195.228,177.491 C197.428,179.691 198.298,176.949 198.148,174.041 C198.032,172.705 197.778,171.369 197.238,169.921 C196.625,167.807 193.837,168.786 193.708,170.771 Z" class="line sucker"/>
+                  <path id="shapePath35" d="M189.538,160.111 C189.847,162.591 191.039,164.965 192.858,166.681 C193.815,167.767 195.638,166.764 195.488,165.401 L195.488,165.351 C195.518,164.31 195.4,163.27 195.138,162.261 C194.802,160.886 194.208,159.586 193.388,158.431 C192.99,157.609 191.907,157.149 191.018,157.381 C190.17,157.694 189.193,158.986 189.538,160.111 Z" class="line sucker"/>
+                  <path id="shapePath36" d="M183.068,151.171 C184.278,153.33 186.225,155.083 188.558,155.941 C189.841,156.58 191.145,155.013 190.538,153.801 C189.69,151.484 188.069,149.412 185.928,148.161 C185.206,147.7 184.281,147.7 183.558,148.161 C182.696,148.834 182.398,150.324 183.068,151.171 Z" class="line sucker"/>
+                  <path id="shapePath37" d="M187.363,164.9 C189.775,164.441 187.971,160.884 184.838,157.071 C182.665,154.427 181.693,158.121 182.878,160.521 C183.792,162.451 185.928,165.231 187.363,164.9 Z" class="line sucker"/>
+                  <path id="shapePath38" d="M190.678,176.521 C192.358,176.726 192.299,173.919 192.358,172.661 C192.223,170.848 191.713,168.947 190.438,167.591 C189.288,166.513 187.767,167.787 187.848,169.151 C187.796,170.433 188.064,171.729 188.312,172.931 C188.701,174.496 189.218,176.083 190.678,176.521 Z" class="line sucker"/>
+                  <path id="shapePath39" d="M192.978,179.711 C192.75,179.067 192.151,178.628 191.468,178.601 C190.688,178.691 190.138,179.601 190.128,180.801 C190.108,183.017 190.781,185.236 191.988,187.091 C192.858,188.23 193.803,187.531 193.988,186.331 C194.2,184.071 193.807,181.817 192.978,179.711 Z" class="line sucker"/>
+                  <path id="shapePath40" d="M198.596,181.365 C196.959,179.124 195.622,181.403 195.228,183.751 C195.055,184.934 195.106,186.138 195.378,187.301 C195.918,189.422 198.348,189.173 198.758,187.201 C199.25,185.181 199.392,183.169 198.596,181.365 Z" class="line sucker"/>
+                  <path id="shapePath41" d="M180.788,147.551 C181.88,148.21 182.83,146.693 182.118,145.801 C179.891,144.527 177.547,143.469 175.118,142.641 C176.395,144.841 178.448,146.569 180.788,147.551 Z" class="line sucker"/>
+                  <path id="shapePath42" d="M171.988,146.581 C173.136,147.263 174.065,145.61 173.278,144.731 C172.623,143.49 171.76,142.362 170.758,141.381 C169.252,141.001 167.682,140.668 166.048,140.381 C166.373,143.376 169.504,145.34 171.988,146.581 Z" class="line sucker"/>
+                  <path id="shapePath43" d="M110.775,66.0744 C111.779,64.1753 115.409,66.0642 117.168,67.4409 C118.514,68.4942 118.57,70.7016 116.254,70.7016 C113.78,70.7016 109.906,67.7191 110.775,66.0744 Z" class="line sucker"/>
+              </g>
+          </svg>
+      </div>
+      <div class="loading__copy">
+        Loading...
+      </div>
+    </div>
+    <main id="main" class="main">
+      <div class="main__stars"></div>
+      <a id="intro-anchor"></a>
+      <section id="intro" class="intro scene">
+        <div class="scene__body scene__body--intro">
+          <div class="scene__box scene__box--intro__abstract">
+            <div class="intro__abstract-logo">
+              <img src="media/inkfish-logo.svg" alt="" class="intro__abstract-logo__image svg">
+            </div>
+            <div class="intro__abstract-stage">
+              <div class="intro__abstract-copy">
+                <span class="intro__abstract-copy-line">My job is to build</span>
+                <span class="intro__abstract-copy-line"><strong class="intro__abstract-copy--focus">creative</strong>                  interactions</span>
+                <span class="intro__abstract-copy-line">that
+                    <strong class="intro__abstract-copy--focus">amaze</strong>                and
+                    <strong class="intro__abstract-copy--focus">inspire</strong></span>
+              </div>
+              <div class="intro__abstract-services">
+                <img src="media/service-summary.svg" alt="" class="intro__abstract-services__img svg">
+              </div>
+            </div>
+          </div>
+          <div class="scene__box scene__box--intro__name">
+            <div class="intro__name">
+              <div class="intro__name-part">Xristopher</div>
+              <div class="intro__name-part">Anderton</div>
+            </div>
+          </div>
+          <div class="scene__box scene__box--intro__composite">
+            <div class="intro__composite">
+              <div class="intro__composite-sun"></div>
+              <picture class="intro__composite-portrait">
+                <img class="intro__composite-portrait-image" src="media/portrait-pier.png"
+                  alt="">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="scene work" id="work">
+        <a id="work-anchor"></a>
+        <div class="work__body">
+          <div class="work__box work__box--visuals container">
+            <div class="work__visuals-moon">
+              <img src="media/dark-moon.svg" alt="" class="work__visuals-moon-image">
+            </div>
+            <div class="work__visuals-mockups container">
+              <picture class="work__visuals-mockup work__visuals-mockup--laptop" id="laptop">
+                <img class="work__visuals-mockup--laptop-img" src="media/macbook-rose-hells-heart.png"
+                  alt="">
+              </picture>
+              <picture class="work__visuals-mockup work__visuals-mockup--phone" id="phone">
+                <img class="work__visuals-mockup--phone-img" src="media/iphone-white-leap.png"
+                  alt="">
+              </picture>
+            </div>
+          </div>
+          <div class="work__box work__box--copy">
+            <div class="work__copy">
+              <h1>
+                  <span class="work__copy--normal">Clients use my work where</span> <strong class="work__copy--focus">creativity</strong>
+                   <span class="work__copy--normal">is key to making an</span> <strong class="work__copy--focus">impact</strong>
+                </h1>
+              <p class="work__copy--normal">
+                I’m passionate about creating memorable experiences with unexpected details.
+                My focus on extending eye-catching details into your brand
+                will make your project a memorable and enjoyable experience
+                for your audience.
+              </p>
+            </div>
+          </div>
+          <svg version="1.1" class="work__visuals-comet svg" id="CometImpact" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 436.7 314.5" style="enable-background:new 0 0 436.7 314.5;" xml:space="preserve"> <linearGradient id="blastGestalt_1_" gradientUnits="userSpaceOnUse" x1="203.5514" y1="237.8303" x2="383.4514" y2="237.8303"> <stop offset="0.1" style="stop-color:#F06098"/> <stop offset="0.5" style="stop-color:#D5ADD1"/> <stop offset="0.9" style="stop-color:#2A7DE1"/> </linearGradient><linearGradient id="BlastLinePosteriorInferior_1_" gradientUnits="userSpaceOnUse" x1="195.7214" y1="295.9041" x2="311.1214" y2="295.9041"> <stop offset="0.1" style="stop-color:#3F97D9"/> <stop offset="0.8" style="stop-color:#F06098"/> <stop offset="0.8658" style="stop-color:#ED5D97"/> <stop offset="0.9078" style="stop-color:#E55495"/> <stop offset="0.9433" style="stop-color:#D84592"/> <stop offset="0.9748" style="stop-color:#C5318E"/> <stop offset="1" style="stop-color:#B01A89"/> </linearGradient> <linearGradient id="BlastLinePosteriorSuperior_2_" gradientUnits="userSpaceOnUse" x1="216.3214" y1="237.5768" x2="311.1214" y2="237.5768"> <stop offset="0.1" style="stop-color:#3F97D9"/> <stop offset="0.8" style="stop-color:#F06098"/> <stop offset="0.8658" style="stop-color:#ED5D97"/> <stop offset="0.9078" style="stop-color:#E55495"/> <stop offset="0.9433" style="stop-color:#D84592"/> <stop offset="0.9748" style="stop-color:#C5318E"/> <stop offset="1" style="stop-color:#B01A89"/> </linearGradient> <linearGradient id="BlastLineAnteriorInferior_1_" gradientUnits="userSpaceOnUse" x1="308.1214" y1="293.5179" x2="401.3214" y2="293.5179"> <stop offset="0" style="stop-color:#B01A89"/> <stop offset="2.520452e-02" style="stop-color:#C5318E"/> <stop offset="5.674112e-02" style="stop-color:#D84592"/> <stop offset="9.216207e-02" style="stop-color:#E55495"/> <stop offset="0.1342" style="stop-color:#ED5D97"/> <stop offset="0.2" style="stop-color:#F06098"/> <stop offset="0.9" style="stop-color:#3F97D9"/> </linearGradient> <linearGradient id="BlastLineAnteriorSuperior_1_" gradientUnits="userSpaceOnUse" x1="308.1214" y1="274.0698" x2="436.7214" y2="274.0698"> <stop offset="0" style="stop-color:#B01A89"/> <stop offset="2.520452e-02" style="stop-color:#C5318E"/> <stop offset="5.674112e-02" style="stop-color:#D84592"/> <stop offset="9.216207e-02" style="stop-color:#E55495"/> <stop offset="0.1342" style="stop-color:#ED5D97"/> <stop offset="0.2" style="stop-color:#F06098"/> <stop offset="0.9" style="stop-color:#3F97D9"/> </linearGradient> <linearGradient id="BlastLineMedial_1_" gradientUnits="userSpaceOnUse" x1="308.1214" y1="249.2268" x2="372.0214" y2="249.2268"> <stop offset="0" style="stop-color:#B01A89"/> <stop offset="2.520452e-02" style="stop-color:#C5318E"/> <stop offset="5.674112e-02" style="stop-color:#D84592"/> <stop offset="9.216207e-02" style="stop-color:#E55495"/> <stop offset="0.1342" style="stop-color:#ED5D97"/> <stop offset="0.2" style="stop-color:#F06098"/> <stop offset="0.9" style="stop-color:#3F97D9"/> </linearGradient> <linearGradient id="CometTailGlow_1_" gradientUnits="userSpaceOnUse" x1="0" y1="149.3087" x2="298.7607" y2="149.3087"> <stop offset="0.1" style="stop-color:#382B82"/> <stop offset="0.5" style="stop-color:#2A7DE1"/> <stop offset="1" style="stop-color:#D5ADD1"/> </linearGradient> <linearGradient id="Comet_2_" gradientUnits="userSpaceOnUse" x1="167.1714" y1="327.6333" x2="167.1714" y2="44.0987" gradientTransform="matrix(1 0 0 -1 0 352.3537)"> <stop offset="0.1" style="stop-color:#3F97D9"/> <stop offset="0.8" style="stop-color:#F06098"/> <stop offset="0.8658" style="stop-color:#ED5D97"/> <stop offset="0.9078" style="stop-color:#E55495"/> <stop offset="0.9433" style="stop-color:#D84592"/> <stop offset="0.9748" style="stop-color:#C5318E"/> <stop offset="1" style="stop-color:#B01A89"/> </linearGradient> <path id="blastGestalt" class="blastGestalt" d="M361.5,286.2c-28.1,12.4-38.7,18.3-42.2,21.2c-0.5,0.4-2.6,2.2-5.8,3.8 c-1.9,0.9-5.2,2.4-9.2,3c-10.1,1.5-18.3-3.1-20.2-4.2c-4.5-2.7-4.3-4.2-9-7.5c-6.1-4.4-12.4-6.1-16.7-6.8l-54.7-14.4l32,6.3 c5.7,1.5-5.7-6.4-12.5-11.5c9.2,5.7,16,9.6,17.7,10.2c1.1,0.4,2.1,0.4,2.1,0.4c1.5,0.2,2.2-0.2,2.5-0.5c1.6-1.4,0.9-5.5-2-10 c3.7,4.6,7.4,11.3,10.9,11.4l2.6,0.2c3.1,0.7-3.3-7.2-7.2-12.8c8.3,8.4,16.4,16.5,19.7,17.4c1,0.2,3.6,0.7,6.9,1.3 c-5.9-3.4-11.2-6.5-11.6-6.7c0.4,0.1,6.2,1.7,7.3,1.2c-1-1.2-6.7-5.8-6.7-5.8l5.3,0.8c-3-3.1-10.2-8.5-10.2-8.5s10.8,1.4,11.5,1 c-0.8-1.8-13.8-13.3-14.7-14.1c1.1,0.8,19.5,13.4,22.2,12.5c-0.9-2.4-5.4-15.4-5.4-15.4l9,10.1l-0.4-3.1l4,5.4l-3-9.1 c-0.4-0.5-1.1-1.2-2-2c-4.3-3.9-9.1-5.7-10.4-6.1c1.1,0.3,4.3,1.1,7.5-0.1c0.7-0.3,1.3-0.6,1.8-0.9l-29.8-91.4l37.9,94.8 c2.3,4.4,4.8-0.9,7.2-4.2c-0.6,3.4-1.8,7.4,0.5,7.6c1.6,1.4,14.6-13.3,15.9-14.8c-1.1,1.5-10.2,13.2-11.1,16.9 c0.1,1.8,7.7,2.5,7.7,2.5s-8.4-0.4-9.8,2.3c-1.4,2.6-2.4,8,0.9,14.8l0,0.1c0.4-5.6,0.6-10.6,0.6-10.6s1.5,4.3,2.8,6.2 c1-1.2,2.9-11.5,2.9-11.5s1.2,5.1,1.7,4.9c0.7-1.5,12.9-44.7,13.5-46.8c-0.4,1.7-6.9,30.7-6,28.8c0.3-1.9,10.6-36.9,11.4-39.5 c-0.8,3.2-12.9,54.2-12.9,57.7c1.3-2.8,4.5-10.1,4.7-10.6c-0.2,0.6-3.4,12.7-4.4,15.9c3.6-3.6,6.3-6.8,6.5-7 c-0.1,0.3-1.7,5.1-3.6,10.9l8.5-10.7c1.4-2.6-1.8-12.9-3.8-19.9c2.3,5.6,5.1,15.8,6.4,14.6c0.9-0.5,1.1-3.6,1-5.7 c0.4,2.2,1.5,4.3,2,3.8l2.6-3.3c1.4-2.2,1.7-6,1.9-9.9c0.7,2.6,1.4,5.2,2.3,4.6l37.7-47.6l-36.5,52.2c-1.3,2.2,1.3,2.5,2.7,3.6 c-1.5-0.2-3.6,0.2-4.3,1.9c-1.7,3.5,7.2,3.5,7.2,3.5c-5.9,0.8-12.5,1.2-14.7,4.1l-7.1,10.2c13.7-7.3,27.5-15.2,28-15.5 c-0.8,0.6-25.7,21.3-25.7,22.6c2.8-0.1,20-11.4,21.1-12.1c-0.9,0.7-13.6,10.7-14.1,11.8c2,0.2,24.6-14,37.9-22 c-10.3,7-28.3,18.3-26.7,18.7c2,0,24.7-13.1,39.7-21.3c-16.9,10.7-38.8,24-49,31.3C343.5,291.5,352.5,288.8,361.5,286.2z"/> <path id="BlastLinePosteriorInferior" class="blastLinePosteriorInferior blastline" d="M309.6,309.1c-11.7-8.5-38.4-25.4-75.1-26.3c-14.8-0.4-27.6,1.9-37.3,4.7"/> <path id="BlastLinePosteriorSuperior" class="blastLinePosteriorSuperior blastline" d="M309.6,309.1c-4.4-19.2-13.5-48.2-33.1-79c-20-31.3-42.9-51.9-58.7-64"/> <path id="BlastLineAnteriorInferior" class="blastLineAnteriorInferior blastline" d="M309.6,309.1c2.8-3.9,21.8-29.1,54.2-31c16.6-1,29.5,4.6,36,8"/> <path id="BlastLineAnteriorSuperior" class="blastLineAnteriorSuperior blastline" d="M309.6,309.1c4.7-8.9,30.4-56.3,82.9-67.6c16.6-3.6,31.5-2.6,42.7-0.7"/> <path id="BlastLineMedial" class="blastLineMedial blastline" d="M309.6,309.1c3-16.9,9.2-40.9,22.9-67c12.4-23.5,26.7-40.9,38-52.7"/> <path id="CometTailGlow" class="cometTailGlow" d="M298.5,295.7c-0.7,1.9-2.6,2.5-3,2.6c-2.2,0.7-4.8-0.1-6.8-2.1C91.1,92.8,15.5,15.3,1.7,1.7 C1.4,1.3,0,0,0,0c0.1-0.1,153,149.6,297.5,290.9C298.7,292.3,299.1,294.2,298.5,295.7z"/> <path id="Comet" class="comet" d="M303.5,299.6c1.4-1,2.9-1.8,4.7-2.5c-1.7-0.8-3.3-1.7-4.8-2.8c0.2-1.7,0.7-3.5,1.5-5.2 c-1.8,0.7-3.6,1.1-5.4,1.3c-1-1.3-1.9-2.8-2.5-4.5c-0.8,1.7-1.7,3.2-2.7,4.5c-0.5-0.1-1-0.1-1.5-0.2L26.1,26.2l264.3,267 c0.1,0.3,0.1,0.6,0.2,1c-1.5,1.1-3,2.1-4.8,2.9c1.8,0.6,3.3,1.5,4.8,2.5c-0.3,1.8-0.8,3.6-1.6,5.4c1.7-0.8,3.5-1.3,5.3-1.6 c1,1.4,2,3.1,2.7,4.9c0.6-1.8,1.5-3.4,2.6-4.9c1.7,0.3,3.5,0.8,5.3,1.6C304.2,303.2,303.8,301.4,303.5,299.6z"/></svg>
+        </div>
+      </section>
+      <section class="scene testimony" id="testimony">
+        <a id="testimony-anchor"></a>
+        <div class="testimony__wrapper">
+          <div class="testimony__body">
+            <div class="testimony__box">
+              <div class="testimony__magnet testimony__magnet--quote">
+                “ Xris is a thoughtful , deliberate coder while not
+                <div class="word">sacrificing</div>
+                <div class="word">a</div>
+                <div class="word">sense</div>
+                of playfulness with his code ”</div>
+              <div class="testimony__magnet testimony__magnet--decoys">“ tranformative embody proud creative details pop performance
+                concept excite beast planning conceive glamour personal
+                ready showcase bright inspiring backdrop identity polished
+                big idea done focus amazing create pleased
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+      <div id="cloud-rise" class="clouds scene">
+        <div class="clouds__multiplane">
+          <div class="clouds__plane clouds__plane--plane-1"></div>
+          <div class="clouds__plane clouds__plane--plane-2"></div>
+          <div class="clouds__plane clouds__plane--plane-3"></div>
+          <div class="clouds__plane clouds__plane--plane-4"></div>
+        </div>
+      </div>
+      <section class="scene contact" id="contact">
+        <a id="contact-anchor"></a>
+        <div class="contact__body">
+          <div class="contact__background">
+            <img src="media/social-yin-yang.svg" alt="" class="contact__background-img svg">
+          </div>
+          <div class="contact__box contact__box--form">
+            <form name="form1" class="form form--contact" accept-charset="UTF-8" autocomplete="off"
+              enctype="multipart/form-data" method="post" novalidate action="https://inkfish.wufoo.com/forms/zsjmmnb0dfk3h2/#public"
+              class="form form--contact">
+              <header>
+                <h1>
+                    Tell me about your project
+                  </h1>
+              </header>
+              <ul class="form__set">
+                <li class="form__set-item">
+                  <div class="form__field form__field--text">
+                    <label class="form__label for-accessibility-only" for="Field3">What's unique about your project?</label>
+                    <textarea class="form__text form__text--textarea" id="Field3" name="Field3"
+                      spellcheck="true" rows="5" cols="50" tabindex="1" onkeyup=""
+                      placeholder="What's unique about your project?" required></textarea>
+                  </div>
+                </li>
+                <li class="form__set-item form__set-item--radio">
+                  <![if !IE | (gte IE 8)]>
+                  <legend class="form__legend">
+                    <label class="form__label for-accessibility-only">How should I get back to you?</label>
+                  </legend>
+                  <![endif]>
+                  <!--[if lt IE 8]>
+                      <label class="form__label">
+                      How should I get back to you?
+                      </label>
+                      <![endif]-->
+                  <fieldset class="form__fieldset form__fieldset--single">
+                    <div class="form__field hidden">
+                      <input class="form__radio form__radio--contact-via" id="radioDefault_4"
+                        name="Field4" type="hidden" value="" />
+                    </div>
+                    <div class="form__field form__field--radio form__field--via-email">
+                      <label class="form__label form__label--radio form__label--via-email" for="Field4_0">
+                          Email me at
+                        </label>
+                      <input class="form__radio form__radio--masked form__radio--contact-via form__radio--contact-via--email"
+                        id="Field4_0" name="Field4" type="radio" value="Email"
+                        tabindex="2" onchange="" checked="checked" required
+                      />
+                    </div>
+                    <div class="form__field form__field--radio-mask">
+                      <img class="form__radio-image svg" src="media/control-radio.svg" alt="">
+                    </div>
+                    <div class="form__field form__field--radio form__field--via-phone">
+                      <input class="form__radio form__radio--masked form__radio--contact-via form__radio--contact-via--phone"
+                        id="Field4_1" name="Field4" type="radio" value="Phone"
+                        tabindex="3" onchange="" required />
+                      <label class="form__label form__label--radio form__radio--contact-via form__label--via-phone"
+                        for="Field4_1">
+                          Call me at
+                        </label>
+                    </div>
+                  </fieldset>
+                </li>
+                <li class="form__set-item">
+                  <ul class="form__set form__set--contact-via">
+                    <li class="form__set-item form__set-item--phone">
+                      <fieldset class="form__fieldset">
+                        <div class="form__field form__field--text form__field--multipart">
+                          <div class="form__field-part form__field-part--tel">
+                            <label class="form__label for-accessibility-only" id="title1" for="Field5">Phone</label>
+                            <input id="Field5" name="Field5" type="tel" class="form__text form__text--part form__text--phone-1"
+                              value="" size="3" maxlength="3" tabindex="6"
+                              onkeyup="autotab(this, document.getElementById('Field5-1'), this); filterNonnumeric(this);"
+                              onfocus="this.selectionStart = this.selectionEnd = this.value.length;"
+                              placeholder="###" autocomplete="tel" />
+                          </div>
+                          <div class="form__field-part form__field-part--tel">
+                            <input id="Field5-1" name="Field5-1" type="tel" class="form__text form__text--part form__text--phone-2"
+                              value="" size="3" maxlength="3" tabindex="7"
+                              onkeyup="autotab(this, document.getElementById('Field5-2'), document.getElementById('Field5')); filterNonnumeric(this);"
+                              onfocus="this.selectionStart = this.selectionEnd = this.value.length;"
+                              placeholder="###" autocomplete="tel" />
+                          </div>
+                          <div class="form__field-part form__field-part--tel">
+                            <input id="Field5-2" name="Field5-2" type="tel" class="form__text form__text--part form__text--phone-3"
+                              value="" size="4" maxlength="4" tabindex="8"
+                              onkeyup="autotab(this, this, document.getElementById('Field5-1')); filterNonnumeric(this);"
+                              onfocus="this.selectionStart = this.selectionEnd = this.value.length;"
+                              placeholder="####" autocomplete="tel" />
+                          </div>
+                        </div>
+                      </fieldset>
+                    </li>
+                    <li class="form__set-item form__set-item--email" id="foli2">
+                      <div class="form__field form__field--text">
+                        <label class="form__label for-accessibility-only" id="title2" for="Field2">Email</label>
+                        <input class="form__text form__text--email" id="Field2" name="Field2" type="email"
+                          spellcheck="false" value="" maxlength="255" tabindex="2"
+                          placeholder="user@example.com" autocomplete="email"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="form__set-item" id="foli1">
+                  <div class="form__field form__field--text">
+                    <label class="form__label for-accessibility-only" id="title1" for="Field1">Your name</label>
+                    <input class="form__text form__text--name" id="Field1" name="Field1" type="text"
+                      value="" maxlength="255" tabindex="3" onkeyup="" placeholder="Your name goes here."
+                      autocomplete="name" />
+                  </div>
+                </li>
+                <li class="form__set-item">
+                  <div class="form__toolbar">
+                    <div class="form__field--btn form__field--btn--submit">
+                      <input id="saveForm" name="saveForm" class="form__btn form__btn--submit"
+                        type="submit" value="Send" />
+                    </div>
+                    <a href="https://master.wufoo.com/forms/m7p0x3/def/field1=inkfish.wufoo.com/forms/tell-me-about-your-project/"
+                      target="_blank" style="font-size:85% !important; visibility:hidden !important; display:inline !important; background:none !important; border:none !important; color:blue !important; text-indent:0 !important; text-decoration:underline !important; position:static; !important; margin:0 !important; padding:0 !important; overflow:none; !important; width:auto !important; height:auto !important;">Report Abuse</a>
+                  </div>
+                </li>
+                <li class="form__set-item hidden">
+                  <label for="comment">Do Not Fill This Out</label>
+                  <textarea class="form__text form__text-textarea" name="comment" id="comment"
+                    rows="1" cols="1" tabindex="1"></textarea>
+                  <input type="hidden" id="idstamp" name="idstamp" value="9XISt+XiidOzx+zk4NCAHdvwI4xBS7P1yPBdLvUPRW0="
+                  />
+                </li>
+              </ul>
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer id="footer" class="scene footer">
+        <div class="scene__body scene__body--footer">
+          <div class="scene__box scene__box--footer scene__box--footer--nav">
+            <ul class="external-links">
+              <li><a href="http://be.net/xristopheranderton" class="link" target="_blank">Bēhance</a></li>
+              <li><a href="https://www.facebook.com/inkfishinteractive" class="link"
+                  target="_blank">Facebook</a></li>
+              <li><a href="https://www.linkedin.com/in/xristopher-anderton-3b2a8942"
+                  class="link" target="_blank">LinkedIn</a></li>
+              <li><a href="mailto:hello@ink.fish" class="link" target="_blank">Email</a></li>
+            </ul>
+          </div>
+          <div class="scene__box scene__box--footer scene__box--footer--imprint">
+            <picture class="footer__imprint">
+              <!-- <img src="media/octopus-yin-yang.png " alt=" "> -->
+              <img src="media/imprint-thank-you.svg" alt="Thank You" class="footer__imprint__image svg">
+            </picture>
+          </div>
+          <div class="scene__box scene__box--footer scene__box--footer--colophon">All rights reserved. © Xristopher Anderton</div>
+        </div>
+        <a id="footer-anchor"></a>
+      </footer>
+    </main>
+    <script type="text/javascript" src="scripts/lib.min.js"></script>
+    <script>
+      var tlDraw=new TimelineMax({yoyo:!1,repeat:-1}),tlCopy=new TimelineMax({yoyo:!1,repeat:-1}),tlLoadingFade=new TimelineLite,loading=$(".loading"),arm=$("#arm path"),suckers=$("#suckers path"),loadingCopy=$(".loading__copy"),loadingText=new SplitText(loadingCopy,{type:"words, chars"}),copyDur=4,isLoaded=!1,watchLoadTimer=0;function watchLoad(){watchLoadTimer=window.setTimeout(function(){!0===isLoaded?(triggerLoaded(),console.log("waiting",isLoaded)):(watchLoad(),console.log("loaded!",isLoaded))},500)}function triggerLoaded(){tlCopy.pause(),tlLoadingFade.play()}copyDur/=loadingText.chars.length,tlCopy.staggerTo(loadingText.chars,copyDur/2,{y:-6},copyDur/3).staggerTo(loadingText.chars,copyDur/2,{y:0},copyDur/3,copyDur/2),tlLoadingFade.to([loadingCopy],.6,{scale:0,rotationY:10}).to(loading,.4,{opacity:0},0).set(loading,{zIndex:-99}).progress(0).pause(),watchLoad();
+    </script>
+    <script type="text/javascript" src="scripts/main.min.js"></script>
+  </body>
+</html>
