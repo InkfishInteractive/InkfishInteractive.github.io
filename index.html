@@ -13,7 +13,7 @@
     .loading--active{display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;-webkit-align-content:center;align-content:center;-webkit-flex-direction:column;flex-direction:column;position:fixed;top:0;left:0;height:100vh;width:100vw;background:#00a87e;z-index:99}.loading--inactive{visibility:hidden}.loading__copy{color:#ece6ef;text-align:center;font-size:1.3em;line-height:2em}.loading__logo{margin:0 auto;width:100px}.ready--inactive{visibility:hidden}
     </style>
     <link rel="stylesheet " href="https://use.typekit.net/mdt1ktv.css ">
-    <link rel="stylesheet " href="styles/css/main.css">
+    <link rel="stylesheet " href="styles/main.css">
   </head>
   <body>
     <svg class="for-accessibility-only">
@@ -192,6 +192,7 @@
           </div>
         </div>
       </section>
+      </div>
       <div id="cloud-rise" class="clouds scene">
         <div class="clouds__multiplane">
           <div class="clouds__plane clouds__plane--plane-1"></div>
@@ -208,7 +209,8 @@
           </div>
           <div class="contact__box contact__box--form">
             <form name="form1" class="form form--contact" accept-charset="UTF-8" autocomplete="off"
-              enctype="multipart/form-data" method="post" novalidate action="https://inkfish.wufoo.com/forms/zsjmmnb0dfk3h2/#public">
+              enctype="multipart/form-data" method="post" novalidate action="https://inkfish.wufoo.com/forms/zsjmmnb0dfk3h2/#public"
+              class="form form--contact">
               <header>
                 <h1>
                     Tell me about your project
@@ -268,7 +270,7 @@
                       <fieldset class="form__fieldset">
                         <div class="form__field form__field--text form__field--multipart">
                           <div class="form__field-part form__field-part--tel">
-                            <label class="form__label for-accessibility-only" id="title5" for="Field5">Phone</label>
+                            <label class="form__label for-accessibility-only" id="title1" for="Field5">Phone</label>
                             <input id="Field5" name="Field5" type="tel" class="form__text form__text--part form__text--phone-1"
                               value="" size="3" maxlength="3" tabindex="6"
                               onkeyup="autotab(this, document.getElementById('Field5-1'), this); filterNonnumeric(this);"
